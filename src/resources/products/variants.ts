@@ -70,6 +70,8 @@ export interface ProductVariant {
   product_id: string;
 
   variant_id: string;
+
+  type?: 'big' | 'small';
 }
 
 export type VariantListResponse = Array<ProductVariant>;
@@ -90,6 +92,8 @@ export interface VariantCreateParams {
   name: string;
 
   price: number;
+
+  type?: 'big' | 'small';
 }
 
 export interface VariantUpdateParams {
@@ -104,6 +108,8 @@ export interface VariantUpdateParams {
   name: string;
 
   price: number;
+
+  type?: 'big' | 'small';
 }
 
 export declare namespace Variants {
