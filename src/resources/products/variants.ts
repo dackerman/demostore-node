@@ -58,7 +58,7 @@ export class Variants extends APIResource {
 }
 
 /**
- * Represents a ProductVariant
+ * Represents a ProductVariant record
  */
 export interface ProductVariant {
   image_url: string;
@@ -70,8 +70,6 @@ export interface ProductVariant {
   product_id: string;
 
   variant_id: string;
-
-  type?: 'big' | 'small';
 }
 
 export type VariantListResponse = Array<ProductVariant>;
@@ -81,35 +79,19 @@ export interface VariantDeleteResponse {
 }
 
 export interface VariantCreateParams {
-  /**
-   * URL of the image to display for the variant
-   */
   image_url: string;
 
-  /**
-   * The name of the product
-   */
   name: string;
 
   price: number;
-
-  type?: 'big' | 'small';
 }
 
 export interface VariantUpdateParams {
-  /**
-   * URL of the image to display for the variant
-   */
   image_url: string;
 
-  /**
-   * The name of the product
-   */
   name: string;
 
   price: number;
-
-  type?: 'big' | 'small';
 }
 
 export declare namespace Variants {
