@@ -29,7 +29,6 @@ describe('resource variants', () => {
       image_url: 'image_url',
       name: 'name',
       price: 0,
-      type: 'big',
     });
   });
 
@@ -71,7 +70,6 @@ describe('resource variants', () => {
       image_url: 'image_url',
       name: 'name',
       price: 0,
-      type: 'big',
     });
   });
 
