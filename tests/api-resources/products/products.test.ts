@@ -31,7 +31,6 @@ describe('resource products', () => {
       image_url: 'image_url',
       name: 'name',
       price: 0,
-      long_description: 'long_description',
     });
   });
 
@@ -75,7 +74,6 @@ describe('resource products', () => {
       image_url: 'image_url',
       name: 'name',
       price: 0,
-      long_description: 'long_description',
     });
   });
 

@@ -63,9 +63,6 @@ export interface Product {
 
   image_url: string;
 
-  /**
-   * The name of the Product
-   */
   name: string;
 
   price: number;
@@ -84,17 +81,9 @@ export interface ProductCreateParams {
 
   image_url: string;
 
-  /**
-   * The name of the product
-   */
   name: string;
 
   price: number;
-
-  /**
-   * An extra long description of the product
-   */
-  long_description?: string;
 }
 
 export interface ProductUpdateParams {
@@ -102,17 +91,9 @@ export interface ProductUpdateParams {
 
   image_url: string;
 
-  /**
-   * The name of the product
-   */
   name: string;
 
   price: number;
-
-  /**
-   * An extra long description of the product
-   */
-  long_description?: string;
 }
 
 Products.Variants = Variants;
