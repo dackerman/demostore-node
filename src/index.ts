@@ -9,6 +9,7 @@ import {
   Product,
   ProductCreateParams,
   ProductDeleteResponse,
+  ProductListParams,
   ProductListResponse,
   ProductUpdateParams,
   Products,
@@ -172,6 +173,7 @@ export declare namespace StainlessStore {
     type ProductDeleteResponse as ProductDeleteResponse,
     type ProductCreateParams as ProductCreateParams,
     type ProductUpdateParams as ProductUpdateParams,
+    type ProductListParams as ProductListParams,
   };
 }
 

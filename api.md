@@ -11,7 +11,7 @@ Methods:
 - <code title="post /products">client.products.<a href="./src/resources/products/products.ts">create</a>({ ...params }) -> Product</code>
 - <code title="get /products/{product_id}">client.products.<a href="./src/resources/products/products.ts">retrieve</a>(productId) -> Product</code>
 - <code title="put /products/{product_id}">client.products.<a href="./src/resources/products/products.ts">update</a>(productId, { ...params }) -> Product</code>
-- <code title="get /products">client.products.<a href="./src/resources/products/products.ts">list</a>() -> ProductListResponse</code>
+- <code title="get /products">client.products.<a href="./src/resources/products/products.ts">list</a>({ ...params }) -> ProductListResponse</code>
 - <code title="delete /products/{product_id}">client.products.<a href="./src/resources/products/products.ts">delete</a>(productId) -> ProductDeleteResponse</code>
 
 ## Variants
