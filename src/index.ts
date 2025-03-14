@@ -3,6 +3,8 @@
 import { type Agent } from './_shims/index';
 import * as Core from './core';
 import * as Errors from './error';
+import * as Pagination from './pagination';
+import { type OffsetPaginationParams, OffsetPaginationResponse } from './pagination';
 import * as Uploads from './uploads';
 import * as API from './resources/index';
 import {
@@ -10,9 +12,9 @@ import {
   ProductCreateParams,
   ProductDeleteResponse,
   ProductListParams,
-  ProductListResponse,
   ProductUpdateParams,
   Products,
+  ProductsOffsetPagination,
 } from './resources/products/products';
 
 export interface ClientOptions {
@@ -163,14 +165,21 @@ export class StainlessStore extends Core.APIClient {
 }
 
 StainlessStore.Products = Products;
+StainlessStore.ProductsOffsetPagination = ProductsOffsetPagination;
 export declare namespace StainlessStore {
   export type RequestOptions = Core.RequestOptions;
+
+  export import OffsetPagination = Pagination.OffsetPagination;
+  export {
+    type OffsetPaginationParams as OffsetPaginationParams,
+    type OffsetPaginationResponse as OffsetPaginationResponse,
+  };
 
   export {
     Products as Products,
     type Product as Product,
-    type ProductListResponse as ProductListResponse,
     type ProductDeleteResponse as ProductDeleteResponse,
+    ProductsOffsetPagination as ProductsOffsetPagination,
     type ProductCreateParams as ProductCreateParams,
     type ProductUpdateParams as ProductUpdateParams,
     type ProductListParams as ProductListParams,

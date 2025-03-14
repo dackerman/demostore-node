@@ -12,6 +12,7 @@ import {
   VariantUpdateParams,
   Variants,
 } from './variants';
+import { OffsetPagination, type OffsetPaginationParams } from '../../pagination';
 
 export class Products extends APIResource {
   variants: VariantsAPI.Variants = new VariantsAPI.Variants(this._client);
@@ -44,16 +45,19 @@ export class Products extends APIResource {
   /**
    * Read Products
    */
-  list(query?: ProductListParams, options?: Core.RequestOptions): Core.APIPromise<ProductListResponse>;
-  list(options?: Core.RequestOptions): Core.APIPromise<ProductListResponse>;
+  list(
+    query?: ProductListParams,
+    options?: Core.RequestOptions,
+  ): Core.PagePromise<ProductsOffsetPagination, Product>;
+  list(options?: Core.RequestOptions): Core.PagePromise<ProductsOffsetPagination, Product>;
   list(
     query: ProductListParams | Core.RequestOptions = {},
     options?: Core.RequestOptions,
-  ): Core.APIPromise<ProductListResponse> {
+  ): Core.PagePromise<ProductsOffsetPagination, Product> {
     if (isRequestOptions(query)) {
       return this.list({}, query);
     }
-    return this._client.get('/products', { query, ...options });
+    return this._client.getAPIList('/products', ProductsOffsetPagination, { query, ...options });
   }
 
   /**
@@ -63,6 +67,8 @@ export class Products extends APIResource {
     return this._client.delete(`/products/${productId}`, options);
   }
 }
+
+export class ProductsOffsetPagination extends OffsetPagination<Product> {}
 
 /**
  * Represents a Product record
@@ -77,12 +83,6 @@ export interface Product {
   price: number;
 
   product_id: string;
-}
-
-export interface ProductListResponse {
-  data: Array<Product>;
-
-  next: number | null;
 }
 
 export interface ProductDeleteResponse {
@@ -109,19 +109,16 @@ export interface ProductUpdateParams {
   price: number;
 }
 
-export interface ProductListParams {
-  limit?: number;
+export interface ProductListParams extends OffsetPaginationParams {}
 
-  skip?: number;
-}
-
+Products.ProductsOffsetPagination = ProductsOffsetPagination;
 Products.Variants = Variants;
 
 export declare namespace Products {
   export {
     type Product as Product,
-    type ProductListResponse as ProductListResponse,
     type ProductDeleteResponse as ProductDeleteResponse,
+    ProductsOffsetPagination as ProductsOffsetPagination,
     type ProductCreateParams as ProductCreateParams,
     type ProductUpdateParams as ProductUpdateParams,
     type ProductListParams as ProductListParams,

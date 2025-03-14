@@ -145,6 +145,37 @@ On timeout, an `APIConnectionTimeoutError` is thrown.
 
 Note that requests which time out will be [retried twice by default](#retries).
 
+## Auto-pagination
+
+List methods in the StainlessStore API are paginated.
+You can use the `for await … of` syntax to iterate through items across all pages:
+
+```ts
+async function fetchAllProducts(params) {
+  const allProducts = [];
+  // Automatically fetches more pages as needed.
+  for await (const product of client.products.list()) {
+    allProducts.push(product);
+  }
+  return allProducts;
+}
+```
+
+Alternatively, you can request a single page at a time:
+
+```ts
+let page = await client.products.list();
+for (const product of page.data) {
+  console.log(product);
+}
+
+// Convenience methods are provided for manually paginating:
+while (page.hasNextPage()) {
+  page = await page.getNextPage();
+  // ...
+}
+```
+
 ## Advanced Usage
 
 ### Accessing raw Response data (e.g., headers)
