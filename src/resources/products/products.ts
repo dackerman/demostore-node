@@ -1,6 +1,7 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 import { APIResource } from '../../resource';
+import { isRequestOptions } from '../../core';
 import * as Core from '../../core';
 import * as VariantsAPI from './variants';
 import {
@@ -43,8 +44,16 @@ export class Products extends APIResource {
   /**
    * Read Products
    */
-  list(options?: Core.RequestOptions): Core.APIPromise<ProductListResponse> {
-    return this._client.get('/products', options);
+  list(query?: ProductListParams, options?: Core.RequestOptions): Core.APIPromise<ProductListResponse>;
+  list(options?: Core.RequestOptions): Core.APIPromise<ProductListResponse>;
+  list(
+    query: ProductListParams | Core.RequestOptions = {},
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<ProductListResponse> {
+    if (isRequestOptions(query)) {
+      return this.list({}, query);
+    }
+    return this._client.get('/products', { query, ...options });
   }
 
   /**
@@ -70,7 +79,11 @@ export interface Product {
   product_id: string;
 }
 
-export type ProductListResponse = Array<Product>;
+export interface ProductListResponse {
+  data: Array<Product>;
+
+  next: number | null;
+}
 
 export interface ProductDeleteResponse {
   success: boolean;
@@ -96,6 +109,12 @@ export interface ProductUpdateParams {
   price: number;
 }
 
+export interface ProductListParams {
+  limit?: number;
+
+  skip?: number;
+}
+
 Products.Variants = Variants;
 
 export declare namespace Products {
@@ -105,6 +124,7 @@ export declare namespace Products {
     type ProductDeleteResponse as ProductDeleteResponse,
     type ProductCreateParams as ProductCreateParams,
     type ProductUpdateParams as ProductUpdateParams,
+    type ProductListParams as ProductListParams,
   };
 
   export {

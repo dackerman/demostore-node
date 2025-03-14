@@ -7,4 +7,5 @@ export {
   type ProductDeleteResponse,
   type ProductCreateParams,
   type ProductUpdateParams,
+  type ProductListParams,
 } from './products/products';

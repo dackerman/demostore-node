@@ -95,6 +95,13 @@ describe('resource products', () => {
     );
   });
 
+  test('list: request options and params are passed correctly', async () => {
+    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
+    await expect(
+      client.products.list({ limit: 0, skip: 0 }, { path: '/_stainless_unknown_path' }),
+    ).rejects.toThrow(StainlessStore.NotFoundError);
+  });
+
   test('delete', async () => {
     const responsePromise = client.products.delete('product_id');
     const rawResponse = await responsePromise.asResponse();
