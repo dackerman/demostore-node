@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.4 (2025-03-18)
+
+Full Changelog: [demostore-v0.1.0-alpha.3...demostore-v0.1.0-alpha.4](https://github.com/dackerman/demostore-node/compare/demostore-v0.1.0-alpha.3...demostore-v0.1.0-alpha.4)
+
+### Features
+
+* tweak dist stuff ([4bc201c](https://github.com/dackerman/demostore-node/commit/4bc201c7a29abd1e80022821b5eb90b1e09ac693))
+
 ## 0.1.0-alpha.3 (2025-03-18)
 
 Full Changelog: [demostore-v0.1.0-alpha.2...demostore-v0.1.0-alpha.3](https://github.com/dackerman/demostore-node/compare/demostore-v0.1.0-alpha.2...demostore-v0.1.0-alpha.3)
