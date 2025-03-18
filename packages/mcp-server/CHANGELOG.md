@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0-alpha.2 (2025-03-18)
+
+Full Changelog: [v0.1.0-alpha.1...v0.1.0-alpha.2](https://github.com/dackerman/demostore-node/compare/v0.1.0-alpha.1...v0.1.0-alpha.2)
+
+### Bug Fixes
+
+* **release:** set a more precise version for the mcp client dependency ([a850f87](https://github.com/dackerman/demostore-node/commit/a850f87258b057ea25f40acd550566762d829d58))
+
 ## 0.1.0-alpha.1 (2025-03-18)
 
 Full Changelog: [v0.0.1-alpha.0...v0.1.0-alpha.1](https://github.com/dackerman/demostore-node/compare/v0.0.1-alpha.0...v0.1.0-alpha.1)
