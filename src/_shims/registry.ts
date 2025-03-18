@@ -42,12 +42,12 @@ export let isFsReadStream: Shims['isFsReadStream'] | undefined = undefined;
 export function setShims(shims: Shims, options: { auto: boolean } = { auto: false }) {
   if (auto) {
     throw new Error(
-      `you must \`import '@dackerman/demostore/shims/${shims.kind}'\` before importing anything else from @dackerman/demostore`,
+      `you must \`import '@dackerman-stainless/demostore/shims/${shims.kind}'\` before importing anything else from @dackerman-stainless/demostore`,
     );
   }
   if (kind) {
     throw new Error(
-      `can't \`import '@dackerman/demostore/shims/${shims.kind}'\` after \`import '@dackerman/demostore/shims/${kind}'\``,
+      `can't \`import '@dackerman-stainless/demostore/shims/${shims.kind}'\` after \`import '@dackerman-stainless/demostore/shims/${kind}'\``,
     );
   }
   auto = options.auto;

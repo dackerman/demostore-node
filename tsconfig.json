@@ -9,9 +9,9 @@
     "esModuleInterop": true,
     "baseUrl": "./",
     "paths": {
-      "@dackerman/demostore/_shims/auto/*": ["src/_shims/auto/*-node"],
-      "@dackerman/demostore/*": ["src/*"],
-      "@dackerman/demostore": ["src/index.ts"]
+      "@dackerman-stainless/demostore/_shims/auto/*": ["src/_shims/auto/*-node"],
+      "@dackerman-stainless/demostore/*": ["src/*"],
+      "@dackerman-stainless/demostore": ["src/index.ts"]
     },
     "noEmit": true,
 
