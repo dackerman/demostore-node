@@ -1,6 +1,6 @@
 import fs from 'fs';
-import { toFile, type ResponseLike } from 'dackerman-store/uploads';
-import { File } from 'dackerman-store/_shims/index';
+import { toFile, type ResponseLike } from '@dackerman/demostore/uploads';
+import { File } from '@dackerman/demostore/_shims/index';
 
 class MyClass {
   name: string = 'foo';

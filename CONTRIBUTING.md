@@ -55,12 +55,12 @@ $ cd demostore-node
 # With yarn
 $ yarn link
 $ cd ../my-package
-$ yarn link dackerman-store
+$ yarn link @dackerman/demostore
 
 # With pnpm
 $ pnpm link --global
 $ cd ../my-package
-$ pnpm link -—global dackerman-store
+$ pnpm link -—global @dackerman/demostore
 ```
 
 ## Running tests

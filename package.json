@@ -1,5 +1,5 @@
 {
-  "name": "dackerman-store",
+  "name": "@dackerman/demostore",
   "version": "0.0.1-alpha.0",
   "description": "The official TypeScript library for the Stainless Store API",
   "author": "Stainless Store <dev-feedback@dackerman-store.com>",
@@ -59,8 +59,8 @@
     "./shims/web.mjs"
   ],
   "imports": {
-    "dackerman-store": ".",
-    "dackerman-store/*": "./src/*"
+    "@dackerman/demostore": ".",
+    "@dackerman/demostore/*": "./src/*"
   },
   "exports": {
     "./_shims/auto/*": {
