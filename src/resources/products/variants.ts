@@ -58,7 +58,7 @@ export class Variants extends APIResource {
 }
 
 /**
- * Represents a ProductVariant
+ * Represents a ProductVariant record
  */
 export interface ProductVariant {
   image_url: string;
@@ -79,28 +79,16 @@ export interface VariantDeleteResponse {
 }
 
 export interface VariantCreateParams {
-  /**
-   * URL of the image to display for the variant
-   */
   image_url: string;
 
-  /**
-   * The name of the product
-   */
   name: string;
 
   price: number;
 }
 
 export interface VariantUpdateParams {
-  /**
-   * URL of the image to display for the variant
-   */
   image_url: string;
 
-  /**
-   * The name of the product
-   */
   name: string;
 
   price: number;

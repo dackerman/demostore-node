@@ -48,8 +48,8 @@ async function defaultParseResponse<T>(props: APIResponseProps): Promise<T> {
   }
 
   const contentType = response.headers.get('content-type');
-  const isJSON =
-    contentType?.includes('application/json') || contentType?.includes('application/vnd.api+json');
+  const mediaType = contentType?.split(';')[0]?.trim();
+  const isJSON = mediaType?.includes('application/json') || mediaType?.endsWith('+json');
   if (isJSON) {
     const json = await response.json();
 
@@ -99,9 +99,9 @@ export class APIPromise<T> extends Promise<T> {
    *
    * 👋 Getting the wrong TypeScript type for `Response`?
    * Try setting `"moduleResolution": "NodeNext"` if you can,
-   * or add one of these imports before your first `import … from 'dackerman-store'`:
-   * - `import 'dackerman-store/shims/node'` (if you're running on Node)
-   * - `import 'dackerman-store/shims/web'` (otherwise)
+   * or add one of these imports before your first `import … from '@dackerman-stainless/demostore'`:
+   * - `import '@dackerman-stainless/demostore/shims/node'` (if you're running on Node)
+   * - `import '@dackerman-stainless/demostore/shims/web'` (otherwise)
    */
   asResponse(): Promise<Response> {
     return this.responsePromise.then((p) => p.response);
@@ -115,9 +115,9 @@ export class APIPromise<T> extends Promise<T> {
    *
    * 👋 Getting the wrong TypeScript type for `Response`?
    * Try setting `"moduleResolution": "NodeNext"` if you can,
-   * or add one of these imports before your first `import … from 'dackerman-store'`:
-   * - `import 'dackerman-store/shims/node'` (if you're running on Node)
-   * - `import 'dackerman-store/shims/web'` (otherwise)
+   * or add one of these imports before your first `import … from '@dackerman-stainless/demostore'`:
+   * - `import '@dackerman-stainless/demostore/shims/node'` (if you're running on Node)
+   * - `import '@dackerman-stainless/demostore/shims/web'` (otherwise)
    */
   async withResponse(): Promise<{ data: T; response: Response }> {
     const [data, response] = await Promise.all([this.parse(), this.asResponse()]);

@@ -1,8 +1,8 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import StainlessStore from 'dackerman-store';
-import { APIUserAbortError } from 'dackerman-store';
-import { Headers } from 'dackerman-store/core';
+import StainlessStore from '@dackerman-stainless/demostore';
+import { APIUserAbortError } from '@dackerman-stainless/demostore';
+import { Headers } from '@dackerman-stainless/demostore/core';
 import defaultFetch, { Response, type RequestInit, type RequestInfo } from 'node-fetch';
 
 describe('instantiate client', () => {

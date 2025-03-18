@@ -1,21 +1,18 @@
 # Stainless Store Node API Library
 
-[![NPM version](https://img.shields.io/npm/v/dackerman-store.svg)](https://npmjs.org/package/dackerman-store) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/dackerman-store)
+[![NPM version](https://img.shields.io/npm/v/@dackerman-stainless/demostore.svg)](https://npmjs.org/package/@dackerman-stainless/demostore) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/@dackerman-stainless/demostore)
 
 This library provides convenient access to the Stainless Store REST API from server-side TypeScript or JavaScript.
 
 The REST API documentation can be found on [docs.dackerman-store.com](https://docs.dackerman-store.com). The full API of this library can be found in [api.md](api.md).
 
-It is generated with [Stainless](https://www.stainlessapi.com/).
+It is generated with [Stainless](https://www.stainless.com/).
 
 ## Installation
 
 ```sh
-npm install git+ssh://git@github.com:dackerman/demostore-node.git
+npm install @dackerman-stainless/demostore
 ```
-
-> [!NOTE]
-> Once this package is [published to npm](https://app.stainlessapi.com/docs/guides/publish), this will become: `npm install dackerman-store`
 
 ## Usage
 
@@ -23,7 +20,7 @@ The full API of this library can be found in [api.md](api.md).
 
 <!-- prettier-ignore -->
 ```js
-import StainlessStore from 'dackerman-store';
+import StainlessStore from '@dackerman-stainless/demostore';
 
 const client = new StainlessStore();
 
@@ -47,7 +44,7 @@ This library includes TypeScript definitions for all request params and response
 
 <!-- prettier-ignore -->
 ```ts
-import StainlessStore from 'dackerman-store';
+import StainlessStore from '@dackerman-stainless/demostore';
 
 const client = new StainlessStore();
 
@@ -148,6 +145,37 @@ On timeout, an `APIConnectionTimeoutError` is thrown.
 
 Note that requests which time out will be [retried twice by default](#retries).
 
+## Auto-pagination
+
+List methods in the StainlessStore API are paginated.
+You can use the `for await … of` syntax to iterate through items across all pages:
+
+```ts
+async function fetchAllProducts(params) {
+  const allProducts = [];
+  // Automatically fetches more pages as needed.
+  for await (const product of client.products.list()) {
+    allProducts.push(product);
+  }
+  return allProducts;
+}
+```
+
+Alternatively, you can request a single page at a time:
+
+```ts
+let page = await client.products.list();
+for (const product of page.data) {
+  console.log(product);
+}
+
+// Convenience methods are provided for manually paginating:
+while (page.hasNextPage()) {
+  page = await page.getNextPage();
+  // ...
+}
+```
+
 ## Advanced Usage
 
 ### Accessing raw Response data (e.g., headers)
@@ -228,11 +256,11 @@ add the following import before your first import `from "StainlessStore"`:
 ```ts
 // Tell TypeScript and the package to use the global web fetch instead of node-fetch.
 // Note, despite the name, this does not add any polyfills, but expects them to be provided if needed.
-import 'dackerman-store/shims/web';
-import StainlessStore from 'dackerman-store';
+import '@dackerman-stainless/demostore/shims/web';
+import StainlessStore from '@dackerman-stainless/demostore';
 ```
 
-To do the inverse, add `import "dackerman-store/shims/node"` (which does import polyfills).
+To do the inverse, add `import "@dackerman-stainless/demostore/shims/node"` (which does import polyfills).
 This can also be useful if you are getting the wrong TypeScript types for `Response` ([more details](https://github.com/dackerman/demostore-node/tree/main/src/_shims#readme)).
 
 ### Logging and middleware
@@ -242,7 +270,7 @@ which can be used to inspect or alter the `Request` or `Response` before/after e
 
 ```ts
 import { fetch } from 'undici'; // as one example
-import StainlessStore from 'dackerman-store';
+import StainlessStore from '@dackerman-stainless/demostore';
 
 const client = new StainlessStore({
   fetch: async (url: RequestInfo, init?: RequestInit): Promise<Response> => {

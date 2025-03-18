@@ -7,9 +7,9 @@ const config: JestConfigWithTsJest = {
     '^.+\\.(t|j)sx?$': ['@swc/jest', { sourceMaps: 'inline' }],
   },
   moduleNameMapper: {
-    '^dackerman-store$': '<rootDir>/src/index.ts',
-    '^dackerman-store/_shims/auto/(.*)$': '<rootDir>/src/_shims/auto/$1-node',
-    '^dackerman-store/(.*)$': '<rootDir>/src/$1',
+    '^@dackerman-stainless/demostore$': '<rootDir>/src/index.ts',
+    '^@dackerman-stainless/demostore/_shims/auto/(.*)$': '<rootDir>/src/_shims/auto/$1-node',
+    '^@dackerman-stainless/demostore/(.*)$': '<rootDir>/src/$1',
   },
   modulePathIgnorePatterns: [
     '<rootDir>/ecosystem-tests/',

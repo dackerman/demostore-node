@@ -1,6 +1,7 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 import { APIResource } from '../../resource';
+import { isRequestOptions } from '../../core';
 import * as Core from '../../core';
 import * as VariantsAPI from './variants';
 import {
@@ -11,6 +12,7 @@ import {
   VariantUpdateParams,
   Variants,
 } from './variants';
+import { OffsetPagination, type OffsetPaginationParams } from '../../pagination';
 
 export class Products extends APIResource {
   variants: VariantsAPI.Variants = new VariantsAPI.Variants(this._client);
@@ -43,8 +45,19 @@ export class Products extends APIResource {
   /**
    * Read Products
    */
-  list(options?: Core.RequestOptions): Core.APIPromise<ProductListResponse> {
-    return this._client.get('/products', options);
+  list(
+    query?: ProductListParams,
+    options?: Core.RequestOptions,
+  ): Core.PagePromise<ProductsOffsetPagination, Product>;
+  list(options?: Core.RequestOptions): Core.PagePromise<ProductsOffsetPagination, Product>;
+  list(
+    query: ProductListParams | Core.RequestOptions = {},
+    options?: Core.RequestOptions,
+  ): Core.PagePromise<ProductsOffsetPagination, Product> {
+    if (isRequestOptions(query)) {
+      return this.list({}, query);
+    }
+    return this._client.getAPIList('/products', ProductsOffsetPagination, { query, ...options });
   }
 
   /**
@@ -55,6 +68,8 @@ export class Products extends APIResource {
   }
 }
 
+export class ProductsOffsetPagination extends OffsetPagination<Product> {}
+
 /**
  * Represents a Product record
  */
@@ -63,17 +78,12 @@ export interface Product {
 
   image_url: string;
 
-  /**
-   * The name of the Product
-   */
   name: string;
 
   price: number;
 
   product_id: string;
 }
-
-export type ProductListResponse = Array<Product>;
 
 export interface ProductDeleteResponse {
   success: boolean;
@@ -84,17 +94,9 @@ export interface ProductCreateParams {
 
   image_url: string;
 
-  /**
-   * The name of the product
-   */
   name: string;
 
   price: number;
-
-  /**
-   * An extra long description of the product
-   */
-  long_description?: string;
 }
 
 export interface ProductUpdateParams {
@@ -102,28 +104,24 @@ export interface ProductUpdateParams {
 
   image_url: string;
 
-  /**
-   * The name of the product
-   */
   name: string;
 
   price: number;
-
-  /**
-   * An extra long description of the product
-   */
-  long_description?: string;
 }
 
+export interface ProductListParams extends OffsetPaginationParams {}
+
+Products.ProductsOffsetPagination = ProductsOffsetPagination;
 Products.Variants = Variants;
 
 export declare namespace Products {
   export {
     type Product as Product,
-    type ProductListResponse as ProductListResponse,
     type ProductDeleteResponse as ProductDeleteResponse,
+    ProductsOffsetPagination as ProductsOffsetPagination,
     type ProductCreateParams as ProductCreateParams,
     type ProductUpdateParams as ProductUpdateParams,
+    type ProductListParams as ProductListParams,
   };
 
   export {

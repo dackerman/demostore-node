@@ -1,6 +1,6 @@
 {
   "include": ["src", "tests", "examples"],
-  "exclude": ["src/_shims/**/*-deno.ts"],
+  "exclude": [],
   "compilerOptions": {
     "target": "es2020",
     "lib": ["es2020"],
@@ -9,9 +9,8 @@
     "esModuleInterop": true,
     "baseUrl": "./",
     "paths": {
-      "@dackerman-stainless/demostore/_shims/auto/*": ["src/_shims/auto/*-node"],
-      "@dackerman-stainless/demostore/*": ["src/*"],
-      "@dackerman-stainless/demostore": ["src/index.ts"]
+      "@dackerman-stainless/demostore-mcp/*": ["src/*"],
+      "@dackerman-stainless/demostore-mcp": ["src/index.ts"]
     },
     "noEmit": true,
 
@@ -32,7 +31,6 @@
     "noUncheckedIndexedAccess": true,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
-		"isolatedModules": false,
 
     "skipLibCheck": true
   }

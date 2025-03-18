@@ -1,12 +1,12 @@
 {
   "extends": "./tsconfig.json",
   "include": ["dist/src"],
-  "exclude": ["dist/src/_shims/*-deno.ts"],
+  "exclude": [],
   "compilerOptions": {
     "rootDir": "./dist/src",
     "paths": {
-      "@dackerman-stainless/demostore/*": ["dist/src/*"],
-      "@dackerman-stainless/demostore": ["dist/src/index.ts"],
+      "@dackerman-stainless/demostore-mcp/*": ["src/*"],
+      "@dackerman-stainless/demostore-mcp": ["src/index.ts"]
     },
     "noEmit": false,
     "declaration": true,

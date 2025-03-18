@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import StainlessStore from 'dackerman-store';
+import StainlessStore from '@dackerman-stainless/demostore';
 import { Response } from 'node-fetch';
 
 const client = new StainlessStore({
@@ -31,7 +31,6 @@ describe('resource products', () => {
       image_url: 'image_url',
       name: 'name',
       price: 0,
-      long_description: 'long_description',
     });
   });
 
@@ -75,7 +74,6 @@ describe('resource products', () => {
       image_url: 'image_url',
       name: 'name',
       price: 0,
-      long_description: 'long_description',
     });
   });
 
@@ -95,6 +93,13 @@ describe('resource products', () => {
     await expect(client.products.list({ path: '/_stainless_unknown_path' })).rejects.toThrow(
       StainlessStore.NotFoundError,
     );
+  });
+
+  test('list: request options and params are passed correctly', async () => {
+    // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
+    await expect(
+      client.products.list({ limit: 0, skip: 0 }, { path: '/_stainless_unknown_path' }),
+    ).rejects.toThrow(StainlessStore.NotFoundError);
   });
 
   test('delete', async () => {

@@ -4,8 +4,8 @@
 /**
  * Types will get added to this namespace when you import one of the following:
  *
- *   import 'dackerman-store/shims/node'
- *   import 'dackerman-store/shims/web'
+ *   import '@dackerman-stainless/demostore/shims/node'
+ *   import '@dackerman-stainless/demostore/shims/web'
  *
  * Importing more than one will cause type and runtime errors.
  */

@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import StainlessStore from 'dackerman-store';
+import StainlessStore from '@dackerman-stainless/demostore';
 import { Response } from 'node-fetch';
 
 const client = new StainlessStore({
