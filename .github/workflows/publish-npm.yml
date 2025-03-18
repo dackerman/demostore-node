@@ -4,6 +4,10 @@
 name: Publish NPM
 on:
   workflow_dispatch:
+    inputs:
+      path:
+        description: The path to run the release in, e.g. '.' or 'packages/mcp-server'
+        required: true
 
   release:
     types: [published]
