@@ -9,9 +9,9 @@
     "esModuleInterop": true,
     "baseUrl": "./",
     "paths": {
-      "dackerman-store/_shims/auto/*": ["src/_shims/auto/*-node"],
-      "dackerman-store/*": ["src/*"],
-      "dackerman-store": ["src/index.ts"]
+      "@dackerman/demostore/_shims/auto/*": ["src/_shims/auto/*-node"],
+      "@dackerman/demostore/*": ["src/*"],
+      "@dackerman/demostore": ["src/index.ts"]
     },
     "noEmit": true,
 

@@ -1,9 +1,9 @@
 # 👋 Wondering what everything in here does?
 
-`dackerman-store` supports a wide variety of runtime environments like Node.js, Deno, Bun, browsers, and various
+`@dackerman/demostore` supports a wide variety of runtime environments like Node.js, Deno, Bun, browsers, and various
 edge runtimes, as well as both CommonJS (CJS) and EcmaScript Modules (ESM).
 
-To do this, `dackerman-store` provides shims for either using `node-fetch` when in Node (because `fetch` is still experimental there) or the global `fetch` API built into the environment when not in Node.
+To do this, `@dackerman/demostore` provides shims for either using `node-fetch` when in Node (because `fetch` is still experimental there) or the global `fetch` API built into the environment when not in Node.
 
 It uses [conditional exports](https://nodejs.org/api/packages.html#conditional-exports) to
 automatically select the correct shims for each environment. However, conditional exports are a fairly new
@@ -15,32 +15,32 @@ getting the wrong raw `Response` type from `.asResponse()`, for example.
 
 The user can work around these issues by manually importing one of:
 
-- `import 'dackerman-store/shims/node'`
-- `import 'dackerman-store/shims/web'`
+- `import '@dackerman/demostore/shims/node'`
+- `import '@dackerman/demostore/shims/web'`
 
 All of the code here in `_shims` handles selecting the automatic default shims or manual overrides.
 
 ### How it works - Runtime
 
-Runtime shims get installed by calling `setShims` exported by `dackerman-store/_shims/registry`.
+Runtime shims get installed by calling `setShims` exported by `@dackerman/demostore/_shims/registry`.
 
-Manually importing `dackerman-store/shims/node` or `dackerman-store/shims/web`, calls `setShims` with the respective runtime shims.
+Manually importing `@dackerman/demostore/shims/node` or `@dackerman/demostore/shims/web`, calls `setShims` with the respective runtime shims.
 
-All client code imports shims from `dackerman-store/_shims/index`, which:
+All client code imports shims from `@dackerman/demostore/_shims/index`, which:
 
 - checks if shims have been set manually
-- if not, calls `setShims` with the shims from `dackerman-store/_shims/auto/runtime`
-- re-exports the installed shims from `dackerman-store/_shims/registry`.
+- if not, calls `setShims` with the shims from `@dackerman/demostore/_shims/auto/runtime`
+- re-exports the installed shims from `@dackerman/demostore/_shims/registry`.
 
-`dackerman-store/_shims/auto/runtime` exports web runtime shims.
-If the `node` export condition is set, the export map replaces it with `dackerman-store/_shims/auto/runtime-node`.
+`@dackerman/demostore/_shims/auto/runtime` exports web runtime shims.
+If the `node` export condition is set, the export map replaces it with `@dackerman/demostore/_shims/auto/runtime-node`.
 
 ### How it works - Type time
 
-All client code imports shim types from `dackerman-store/_shims/index`, which selects the manual types from `dackerman-store/_shims/manual-types` if they have been declared, otherwise it exports the auto types from `dackerman-store/_shims/auto/types`.
+All client code imports shim types from `@dackerman/demostore/_shims/index`, which selects the manual types from `@dackerman/demostore/_shims/manual-types` if they have been declared, otherwise it exports the auto types from `@dackerman/demostore/_shims/auto/types`.
 
-`dackerman-store/_shims/manual-types` exports an empty namespace.
-Manually importing `dackerman-store/shims/node` or `dackerman-store/shims/web` merges declarations into this empty namespace, so they get picked up by `dackerman-store/_shims/index`.
+`@dackerman/demostore/_shims/manual-types` exports an empty namespace.
+Manually importing `@dackerman/demostore/shims/node` or `@dackerman/demostore/shims/web` merges declarations into this empty namespace, so they get picked up by `@dackerman/demostore/_shims/index`.
 
-`dackerman-store/_shims/auto/types` exports web type definitions.
-If the `node` export condition is set, the export map replaces it with `dackerman-store/_shims/auto/types-node`, though TS only picks this up if `"moduleResolution": "nodenext"` or `"moduleResolution": "bundler"`.
+`@dackerman/demostore/_shims/auto/types` exports web type definitions.
+If the `node` export condition is set, the export map replaces it with `@dackerman/demostore/_shims/auto/types-node`, though TS only picks this up if `"moduleResolution": "nodenext"` or `"moduleResolution": "bundler"`.

@@ -5,8 +5,8 @@
   "compilerOptions": {
     "rootDir": "./dist/src",
     "paths": {
-      "dackerman-store/*": ["dist/src/*"],
-      "dackerman-store": ["dist/src/index.ts"],
+      "@dackerman/demostore/*": ["dist/src/*"],
+      "@dackerman/demostore": ["dist/src/index.ts"],
     },
     "noEmit": false,
     "declaration": true,
