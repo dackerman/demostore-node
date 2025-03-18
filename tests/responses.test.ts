@@ -1,5 +1,5 @@
-import { createResponseHeaders } from 'dackerman-store/core';
-import { Headers } from 'dackerman-store/_shims/index';
+import { createResponseHeaders } from '@dackerman/demostore/core';
+import { Headers } from '@dackerman/demostore/_shims/index';
 
 describe('response parsing', () => {
   // TODO: test unicode characters

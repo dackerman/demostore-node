@@ -1,6 +1,6 @@
-import { multipartFormRequestOptions, createForm } from 'dackerman-store/core';
-import { Blob } from 'dackerman-store/_shims/index';
-import { toFile } from 'dackerman-store';
+import { multipartFormRequestOptions, createForm } from '@dackerman/demostore/core';
+import { Blob } from '@dackerman/demostore/_shims/index';
+import { toFile } from '@dackerman/demostore';
 
 describe('form data validation', () => {
   test('valid values do not error', async () => {
