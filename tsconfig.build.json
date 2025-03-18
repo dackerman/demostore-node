@@ -5,8 +5,8 @@
   "compilerOptions": {
     "rootDir": "./dist/src",
     "paths": {
-      "@dackerman/demostore/*": ["dist/src/*"],
-      "@dackerman/demostore": ["dist/src/index.ts"],
+      "@dackerman-stainless/demostore/*": ["dist/src/*"],
+      "@dackerman-stainless/demostore": ["dist/src/index.ts"],
     },
     "noEmit": false,
     "declaration": true,
