@@ -1,6 +1,6 @@
 {
   "name": "@dackerman-stainless/demostore",
-  "version": "0.1.0-alpha.7",
+  "version": "0.1.0-alpha.8",
   "description": "The official TypeScript library for the Stainless Store API",
   "author": "Stainless Store <dev-feedback@dackerman-store.com>",
   "types": "dist/index.d.ts",
