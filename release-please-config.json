@@ -1,8 +1,4 @@
 {
-  "packages": {
-    ".": {},
-    "packages/mcp-server": {}
-  },
   "$schema": "https://raw.githubusercontent.com/stainless-api/release-please/main/schemas/config.json",
   "include-v-in-tag": true,
   "include-component-in-tag": false,
