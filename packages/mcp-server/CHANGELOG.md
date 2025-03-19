@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.1.0-alpha.5 (2025-03-19)
+
+Full Changelog: [v0.1.0-alpha.4...v0.1.0-alpha.5](https://github.com/dackerman/demostore-node/compare/v0.1.0-alpha.4...v0.1.0-alpha.5)
+
+### Features
+
+* **api:** add beta MCP support ([#17](https://github.com/dackerman/demostore-node/issues/17)) ([fa89c48](https://github.com/dackerman/demostore-node/commit/fa89c4899b883492364a054d13cc675c8738cb2a))
+* tweak dist stuff ([4bc201c](https://github.com/dackerman/demostore-node/commit/4bc201c7a29abd1e80022821b5eb90b1e09ac693))
+
+
+### Bug Fixes
+
+* **release:** set a more precise version for the mcp client dependency ([a850f87](https://github.com/dackerman/demostore-node/commit/a850f87258b057ea25f40acd550566762d829d58))
+
 ## 0.1.0-alpha.4 (2025-03-18)
 
 Full Changelog: [demostore-mcp-v0.1.0-alpha.3...demostore-mcp-v0.1.0-alpha.4](https://github.com/dackerman/demostore-node/compare/demostore-mcp-v0.1.0-alpha.3...demostore-mcp-v0.1.0-alpha.4)
