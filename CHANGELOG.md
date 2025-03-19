@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.1.0-alpha.8 (2025-03-19)
+
+Full Changelog: [demostore-v0.1.0-alpha.7...demostore-v0.1.0-alpha.8](https://github.com/dackerman/demostore-node/compare/demostore-v0.1.0-alpha.7...demostore-v0.1.0-alpha.8)
+
+### Features
+
+* wip 03/19/25 05:49:39 PM ([e32c718](https://github.com/dackerman/demostore-node/commit/e32c718c0536010b87a6d46a7584d0993c447591))
+
+
+### Chores
+
+* **internal:** version bump ([#51](https://github.com/dackerman/demostore-node/issues/51)) ([1b21686](https://github.com/dackerman/demostore-node/commit/1b21686efc4c368f64513a332bfdd6309789ab37))
+
 ## 0.1.0-alpha.7 (2025-03-19)
 
 Full Changelog: [demostore-v0.1.0-alpha.6...demostore-v0.1.0-alpha.7](https://github.com/dackerman/demostore-node/compare/demostore-v0.1.0-alpha.6...demostore-v0.1.0-alpha.7)
