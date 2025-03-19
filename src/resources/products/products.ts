@@ -80,6 +80,9 @@ export interface Product {
 
   name: string;
 
+  /**
+   * Price
+   */
   price: number;
 
   product_id: string;
