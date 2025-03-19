@@ -1,11 +1,10 @@
 const fs = require('fs');
 const pkgJson = require('../dist/package.json');
-const parentPkgJson = require('../../../package.json');
 
 for (const dep in pkgJson.dependencies) {
   // ensure we point to NPM instead of a local directory
   if (dep === '@dackerman-stainless/demostore') {
-    pkgJson.dependencies[dep] = '^' + parentPkgJson.version;
+    pkgJson.dependencies[dep] = '>0.1';
   }
 }
 

@@ -25,6 +25,9 @@
     "@dackerman-stainless/demostore": "file:../../dist/",
     "@modelcontextprotocol/sdk": "^1.6.1"
   },
+  "files": [
+    "dist"
+  ],
   "bin": {
     "mcp-server": "dist/index.js"
   },
