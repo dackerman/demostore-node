@@ -58,7 +58,7 @@ export class Variants extends APIResource {
 }
 
 /**
- * Represents a ProductVariant record
+ * Represents a ProductVariant.
  */
 export interface ProductVariant {
   image_url: string;

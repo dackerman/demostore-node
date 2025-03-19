@@ -81,7 +81,7 @@ export interface Product {
   name: string;
 
   /**
-   * Price
+   * Price.
    */
   price: number;
 
