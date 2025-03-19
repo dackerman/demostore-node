@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.1.0-alpha.7 (2025-03-19)
+
+Full Changelog: [v0.1.0-alpha.6...v0.1.0-alpha.7](https://github.com/dackerman/demostore-node/compare/v0.1.0-alpha.6...v0.1.0-alpha.7)
+
+### Features
+
+* **api:** update via SDK Studio ([#45](https://github.com/dackerman/demostore-node/issues/45)) ([d211719](https://github.com/dackerman/demostore-node/commit/d211719d6a4118cf4d9d66d2488965e65903015a))
+* **api:** update via SDK Studio ([#46](https://github.com/dackerman/demostore-node/issues/46)) ([e8f846d](https://github.com/dackerman/demostore-node/commit/e8f846d3de5ae5dd7d668c97cb8b281a4e5b385a))
+
+
+### Chores
+
+* **internal:** version bump ([#42](https://github.com/dackerman/demostore-node/issues/42)) ([12ec6c3](https://github.com/dackerman/demostore-node/commit/12ec6c337b3e3d08109cc39ed88b65847993928b))
+* remove custom code ([9fc6c67](https://github.com/dackerman/demostore-node/commit/9fc6c67dfdd8ce377c29a7bcde40e875bc66fc15))
+
 ## 0.1.0-alpha.6 (2025-03-19)
 
 Full Changelog: [v0.1.0-alpha.5...v0.1.0-alpha.6](https://github.com/dackerman/demostore-node/compare/v0.1.0-alpha.5...v0.1.0-alpha.6)
