@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.3.0-beta (2025-03-20)
+
+Full Changelog: [v0.2.1...v0.3.0-beta](https://github.com/dackerman/demostore-node/compare/v0.2.1...v0.3.0-beta)
+
+### Features
+
+* **api:** update via SDK Studio ([#60](https://github.com/dackerman/demostore-node/issues/60)) ([12e7fea](https://github.com/dackerman/demostore-node/commit/12e7feadabf1e85396e64f64b3fb1de47434864d))
+
 ## 0.2.1 (2025-03-20)
 
 Full Changelog: [v0.2.0...v0.2.1](https://github.com/dackerman/demostore-node/compare/v0.2.0...v0.2.1)
