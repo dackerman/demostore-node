@@ -30,14 +30,25 @@ registerApiMethod({
   inputSchema: {
     type: 'object',
     properties: {
-      description: { type: 'string' },
-      image_url: { type: 'string' },
-      name: { type: 'string' },
-      price: { type: 'integer' },
+      description: {
+        type: 'string',
+        title: 'Description',
+      },
+      image_url: {
+        type: 'string',
+        title: 'Image Url',
+      },
+      name: {
+        type: 'string',
+        title: 'Name',
+      },
+      price: {
+        type: 'integer',
+        title: 'Price',
+      },
     },
   },
   handler: (args: any) => {
-    console.error('Calling tool: create_products with args:', args);
     const { ...body } = args;
     return client.products.create(body);
   },
@@ -46,9 +57,16 @@ registerApiMethod({
 registerApiMethod({
   name: 'retrieve_products',
   description: 'Read Product',
-  inputSchema: { type: 'object', properties: { product_id: { type: 'string' } } },
+  inputSchema: {
+    type: 'object',
+    properties: {
+      product_id: {
+        type: 'string',
+        title: 'Product Id',
+      },
+    },
+  },
   handler: (args: any) => {
-    console.error('Calling tool: retrieve_products with args:', args);
     const { product_id } = args;
     return client.products.retrieve(product_id);
   },
@@ -60,15 +78,29 @@ registerApiMethod({
   inputSchema: {
     type: 'object',
     properties: {
-      product_id: { type: 'string' },
-      description: { type: 'string' },
-      image_url: { type: 'string' },
-      name: { type: 'string' },
-      price: { type: 'integer' },
+      product_id: {
+        type: 'string',
+        title: 'Product Id',
+      },
+      description: {
+        type: 'string',
+        title: 'Description',
+      },
+      image_url: {
+        type: 'string',
+        title: 'Image Url',
+      },
+      name: {
+        type: 'string',
+        title: 'Name',
+      },
+      price: {
+        type: 'integer',
+        title: 'Price',
+      },
     },
   },
   handler: (args: any) => {
-    console.error('Calling tool: update_products with args:', args);
     const { product_id, ...body } = args;
     return client.products.update(product_id, body);
   },
@@ -77,9 +109,20 @@ registerApiMethod({
 registerApiMethod({
   name: 'list_products',
   description: 'Read Products',
-  inputSchema: { type: 'object', properties: { limit: { type: 'integer' }, skip: { type: 'integer' } } },
+  inputSchema: {
+    type: 'object',
+    properties: {
+      limit: {
+        type: 'integer',
+        title: 'Limit',
+      },
+      skip: {
+        type: 'integer',
+        title: 'Skip',
+      },
+    },
+  },
   handler: (args: any) => {
-    console.error('Calling tool: list_products with args:', args);
     const { ...body } = args;
     return client.products.list(body);
   },
@@ -88,9 +131,16 @@ registerApiMethod({
 registerApiMethod({
   name: 'delete_products',
   description: 'Delete Product',
-  inputSchema: { type: 'object', properties: { product_id: { type: 'string' } } },
+  inputSchema: {
+    type: 'object',
+    properties: {
+      product_id: {
+        type: 'string',
+        title: 'Product Id',
+      },
+    },
+  },
   handler: (args: any) => {
-    console.error('Calling tool: delete_products with args:', args);
     const { product_id } = args;
     return client.products.delete(product_id);
   },
@@ -102,14 +152,25 @@ registerApiMethod({
   inputSchema: {
     type: 'object',
     properties: {
-      product_id: { type: 'string' },
-      image_url: { type: 'string' },
-      name: { type: 'string' },
-      price: { type: 'integer' },
+      product_id: {
+        type: 'string',
+        title: 'Product Id',
+      },
+      image_url: {
+        type: 'string',
+        title: 'Image Url',
+      },
+      name: {
+        type: 'string',
+        title: 'Name',
+      },
+      price: {
+        type: 'integer',
+        title: 'Price',
+      },
     },
   },
   handler: (args: any) => {
-    console.error('Calling tool: create_products_variants with args:', args);
     const { product_id, ...body } = args;
     return client.products.variants.create(product_id, body);
   },
@@ -120,10 +181,18 @@ registerApiMethod({
   description: 'Read Product Variant',
   inputSchema: {
     type: 'object',
-    properties: { product_id: { type: 'string' }, variant_id: { type: 'string' } },
+    properties: {
+      product_id: {
+        type: 'string',
+        title: 'Product Id',
+      },
+      variant_id: {
+        type: 'string',
+        title: 'Variant Id',
+      },
+    },
   },
   handler: (args: any) => {
-    console.error('Calling tool: retrieve_products_variants with args:', args);
     const { product_id, variant_id } = args;
     return client.products.variants.retrieve(product_id, variant_id);
   },
@@ -135,15 +204,29 @@ registerApiMethod({
   inputSchema: {
     type: 'object',
     properties: {
-      product_id: { type: 'string' },
-      variant_id: { type: 'string' },
-      image_url: { type: 'string' },
-      name: { type: 'string' },
-      price: { type: 'integer' },
+      product_id: {
+        type: 'string',
+        title: 'Product Id',
+      },
+      variant_id: {
+        type: 'string',
+        title: 'Variant ID.',
+      },
+      image_url: {
+        type: 'string',
+        title: 'Image Url',
+      },
+      name: {
+        type: 'string',
+        title: 'Name',
+      },
+      price: {
+        type: 'integer',
+        title: 'Price',
+      },
     },
   },
   handler: (args: any) => {
-    console.error('Calling tool: update_products_variants with args:', args);
     const { product_id, variant_id, ...body } = args;
     return client.products.variants.update(product_id, variant_id, body);
   },
@@ -152,9 +235,16 @@ registerApiMethod({
 registerApiMethod({
   name: 'list_products_variants',
   description: 'Read Product Variants',
-  inputSchema: { type: 'object', properties: { product_id: { type: 'string' } } },
+  inputSchema: {
+    type: 'object',
+    properties: {
+      product_id: {
+        type: 'string',
+        title: 'Product Id',
+      },
+    },
+  },
   handler: (args: any) => {
-    console.error('Calling tool: list_products_variants with args:', args);
     const { product_id } = args;
     return client.products.variants.list(product_id);
   },
@@ -165,10 +255,18 @@ registerApiMethod({
   description: 'Delete Product Variant',
   inputSchema: {
     type: 'object',
-    properties: { product_id: { type: 'string' }, variant_id: { type: 'string' } },
+    properties: {
+      product_id: {
+        type: 'string',
+        title: 'Product Id',
+      },
+      variant_id: {
+        type: 'string',
+        title: 'Variant Id',
+      },
+    },
   },
   handler: (args: any) => {
-    console.error('Calling tool: delete_products_variants with args:', args);
     const { product_id, variant_id } = args;
     return client.products.variants.delete(product_id, variant_id);
   },
@@ -188,7 +286,15 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
     throw new Error(`Unknown tool: ${name}`);
   }
 
-  return apiResponseToMcp(handler(args));
+  const result = await handler(args);
+  return {
+    content: [
+      {
+        type: 'text',
+        text: JSON.stringify(result, null, 2),
+      },
+    ],
+  };
 });
 
 function registerApiMethod({
@@ -204,32 +310,6 @@ function registerApiMethod({
 }) {
   tools.push({ name, description, inputSchema });
   handlers[name] = handler;
-}
-
-function apiResponseToMcp(response: Promise<object>) {
-  return response.then(
-    (value) => {
-      return {
-        content: [
-          {
-            type: 'text',
-            text: JSON.stringify(value),
-          },
-        ],
-      };
-    },
-    (error) => {
-      console.error('API ERROR:', error);
-      return {
-        content: [
-          {
-            type: 'text',
-            text: 'API ERROR: ' + JSON.stringify(error),
-          },
-        ],
-      };
-    },
-  );
 }
 
 async function main() {
