@@ -4,10 +4,6 @@
 name: Publish NPM
 on:
   workflow_dispatch:
-    inputs:
-      path:
-        description: The path to run the release in, e.g. '.' or 'packages/mcp-server'
-        required: true
 
   release:
     types: [published]
@@ -31,6 +27,6 @@ jobs:
 
       - name: Publish to NPM
         run: |
-          yarn tsn scripts/publish-packages.ts '{ "paths_released": "[\"${{ github.event.inputs.path }}\"]" }'
+          bash ./bin/publish-npm
         env:
           NPM_TOKEN: ${{ secrets.STAINLESS_STORE_NPM_TOKEN || secrets.NPM_TOKEN }}
