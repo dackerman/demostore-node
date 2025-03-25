@@ -32,7 +32,7 @@ jobs:
       - name: Publish to NPM
         run: |
           if [ -n "${{ github.event.inputs.path }}" ]; then
-            PATHS_RELEASED="[\"${{ github.event.inputs.path }}\"]"
+            PATHS_RELEASED='[\"${{ github.event.inputs.path }}\"]'
           else
             PATHS_RELEASED='[\".\", \"packages/mcp-server\"]'
           fi
