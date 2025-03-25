@@ -32,10 +32,10 @@ jobs:
       - name: Publish to NPM
         run: |
           if [ -n "${{ github.event.inputs.path }}" ]; then
-            PATHS_RELEASED="["${{ github.event.inputs.path }}"]"
+            PATHS_RELEASED="[\"${{ github.event.inputs.path }}\"]"
           else
-            PATHS_RELEASED="[".", "packages/mcp-server"]"
+            PATHS_RELEASED="[\".\", \"packages/mcp-server\"]"
           fi
-          yarn tsn scripts/publish-packages.ts "{ "paths_released": "$PATHS_RELEASED" }"
+          yarn tsn scripts/publish-packages.ts "{ \"paths_released\": \"$PATHS_RELEASED\" }"
         env:
           NPM_TOKEN: ${{ secrets.STAINLESS_STORE_NPM_TOKEN || secrets.NPM_TOKEN }}
