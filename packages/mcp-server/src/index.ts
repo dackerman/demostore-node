@@ -166,7 +166,7 @@ registerApiMethod({
       },
       price: {
         type: 'integer',
-        title: 'Price',
+        title: 'The Price',
       },
     },
   },
@@ -222,7 +222,7 @@ registerApiMethod({
       },
       price: {
         type: 'integer',
-        title: 'Price',
+        title: 'The Price',
       },
     },
   },
