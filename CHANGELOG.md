@@ -1,5 +1,26 @@
 # Changelog
 
+## 0.4.0-beta (2025-03-25)
+
+Full Changelog: [v0.3.0-beta...v0.4.0-beta](https://github.com/dackerman/demostore-node/compare/v0.3.0-beta...v0.4.0-beta)
+
+### Features
+
+* **api:** update via SDK Studio ([#67](https://github.com/dackerman/demostore-node/issues/67)) ([1523ecc](https://github.com/dackerman/demostore-node/commit/1523ecce97a4ab09cfa2955a353df90ac1c43375))
+* **api:** update via SDK Studio ([#69](https://github.com/dackerman/demostore-node/issues/69)) ([435cd6b](https://github.com/dackerman/demostore-node/commit/435cd6b32b61cdcb93cc5a3f4c8780414001ef96))
+* **api:** update via SDK Studio ([#70](https://github.com/dackerman/demostore-node/issues/70)) ([7a6a5d5](https://github.com/dackerman/demostore-node/commit/7a6a5d5429651272b992f27b0982e78a8cd0a0e0))
+* **mcp:** allow opt-in mcp resources and endpoints ([#63](https://github.com/dackerman/demostore-node/issues/63)) ([bb455a2](https://github.com/dackerman/demostore-node/commit/bb455a2c98876d88ca67cc29d56283271aff4ba6))
+
+
+### Bug Fixes
+
+* avoid type error in certain environments ([#65](https://github.com/dackerman/demostore-node/issues/65)) ([f795f94](https://github.com/dackerman/demostore-node/commit/f795f944d668c107eb1cb3c81b72673bd9fb763f))
+
+
+### Chores
+
+* configure new SDK language ([#68](https://github.com/dackerman/demostore-node/issues/68)) ([cb08596](https://github.com/dackerman/demostore-node/commit/cb08596fa4e4354b2f4dd33b6a0c32bbe81bf037))
+
 ## 0.3.0-beta (2025-03-20)
 
 Full Changelog: [v0.2.1...v0.3.0-beta](https://github.com/dackerman/demostore-node/compare/v0.2.1...v0.3.0-beta)
