@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.6.1 (2025-03-27)
+
+Full Changelog: [v0.6.0...v0.6.1](https://github.com/dackerman/demostore-node/compare/v0.6.0...v0.6.1)
+
+### Chores
+
+* **internal:** version bump ([#82](https://github.com/dackerman/demostore-node/issues/82)) ([a469cde](https://github.com/dackerman/demostore-node/commit/a469cde02c03d53faee1ac03707a1aafd1e03d7d))
+
 ## 0.6.0 (2025-03-27)
 
 Full Changelog: [v0.5.0-beta...v0.6.0](https://github.com/dackerman/demostore-node/compare/v0.5.0-beta...v0.6.0)
