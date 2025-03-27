@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.6.0 (2025-03-27)
+
+Full Changelog: [v0.5.0-beta...v0.6.0](https://github.com/dackerman/demostore-node/compare/v0.5.0-beta...v0.6.0)
+
+### Features
+
+* **mcp:** export server and tools for more customizability ([#80](https://github.com/dackerman/demostore-node/issues/80)) ([83e28e5](https://github.com/dackerman/demostore-node/commit/83e28e50621425e3362d022f24c00a064049429c))
+
+
+### Bug Fixes
+
+* **internal:** work around https://github.com/vercel/next.js/issues/76881 ([#81](https://github.com/dackerman/demostore-node/issues/81)) ([25fced5](https://github.com/dackerman/demostore-node/commit/25fced55b79d3aa6728d8298b02a24f334242f9c))
+
 ## 0.5.0-beta (2025-03-25)
 
 Full Changelog: [v0.4.1-beta...v0.5.0-beta](https://github.com/dackerman/demostore-node/compare/v0.4.1-beta...v0.5.0-beta)
