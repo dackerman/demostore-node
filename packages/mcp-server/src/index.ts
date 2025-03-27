@@ -16,7 +16,7 @@ const client = new StainlessStore();
 export const server = new Server(
   {
     name: 'stainless_store_api',
-    version: '0.5.0-beta',
+    version: '0.6.0',
   },
   {
     capabilities: {
