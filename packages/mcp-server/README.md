@@ -18,7 +18,7 @@ Add the following value to your `mcpServers` section. Make sure to provide any n
 ```json
 {
   "mcpServers": {
-    "stainless_store_api": {
+    "dackerman_stainless_demostore_api": {
       "command": "npx",
       "args": ["-y", "@dackerman-stainless/demostore-mcp"],
       "env": {
