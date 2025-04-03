@@ -1,7 +1,14 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 import { Tool } from '@modelcontextprotocol/sdk/types.js';
+import type { Metadata } from '../';
 import StainlessStore from '@dackerman-stainless/demostore';
+
+export const metadata: Metadata = {
+  resource: 'products',
+  operation: 'write',
+  tags: [],
+};
 
 export const tool: Tool = {
   name: 'create_products',
@@ -34,4 +41,4 @@ export const handler = (client: StainlessStore, args: any) => {
   return client.products.create(body);
 };
 
-export default { tool, handler };
+export default { metadata, tool, handler };
