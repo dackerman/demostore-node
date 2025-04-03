@@ -1,5 +1,26 @@
 # Changelog
 
+## 0.7.0 (2025-04-03)
+
+Full Changelog: [v0.6.0...v0.7.0](https://github.com/dackerman/demostore-node/compare/v0.6.0...v0.7.0)
+
+### Features
+
+* **api:** update via SDK Studio ([#88](https://github.com/dackerman/demostore-node/issues/88)) ([08d6ce6](https://github.com/dackerman/demostore-node/commit/08d6ce606130bf55a7cf560bfeabd45ed9b843fa))
+* **mcp:** handle recursive schemas ([#84](https://github.com/dackerman/demostore-node/issues/84)) ([9acc209](https://github.com/dackerman/demostore-node/commit/9acc2091acebe977991f124853a3d19bff59a794))
+* **mcp:** support end-user filtering of tools, resources, and tags ([#86](https://github.com/dackerman/demostore-node/issues/86)) ([4eabca0](https://github.com/dackerman/demostore-node/commit/4eabca0add45164febff09feaa6359a5a7de61cf))
+
+
+### Bug Fixes
+
+* **client:** send `X-Stainless-Timeout` in seconds ([#85](https://github.com/dackerman/demostore-node/issues/85)) ([61a565b](https://github.com/dackerman/demostore-node/commit/61a565b240dfdb072ac3d893887f56912ac23661))
+
+
+### Chores
+
+* **internal:** add aliases for Record and Array ([#87](https://github.com/dackerman/demostore-node/issues/87)) ([8deb040](https://github.com/dackerman/demostore-node/commit/8deb040f1557995d413ebf29f134b58d6af88c6b))
+* **internal:** version bump ([#82](https://github.com/dackerman/demostore-node/issues/82)) ([a469cde](https://github.com/dackerman/demostore-node/commit/a469cde02c03d53faee1ac03707a1aafd1e03d7d))
+
 ## 0.6.0 (2025-03-27)
 
 Full Changelog: [v0.5.0-beta...v0.6.0](https://github.com/dackerman/demostore-node/compare/v0.5.0-beta...v0.6.0)
