@@ -3,6 +3,7 @@
 import StainlessStore from '@dackerman-stainless/demostore';
 import { Tool } from '@modelcontextprotocol/sdk/types.js';
 
+import set_darkmode_funtools from './funtools/set-darkmode-funtools';
 import create_products from './products/create-products';
 import retrieve_products from './products/retrieve-products';
 import update_products from './products/update-products';
@@ -34,6 +35,7 @@ function addEndpoint(endpoint: Endpoint) {
   endpoints.push(endpoint);
 }
 
+addEndpoint(set_darkmode_funtools);
 addEndpoint(create_products);
 addEndpoint(retrieve_products);
 addEndpoint(update_products);

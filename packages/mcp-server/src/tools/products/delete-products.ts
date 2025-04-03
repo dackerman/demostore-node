@@ -16,6 +16,10 @@ export const tool: Tool = {
   inputSchema: {
     type: 'object',
     properties: {
+      org_id: {
+        type: 'string',
+        title: 'Org Id',
+      },
       product_id: {
         type: 'string',
         title: 'Product Id',
@@ -25,8 +29,8 @@ export const tool: Tool = {
 };
 
 export const handler = (client: StainlessStore, args: any) => {
-  const { product_id } = args;
-  return client.products.delete(product_id);
+  const { product_id, ...body } = args;
+  return client.products.delete(product_id, body);
 };
 
 export default { metadata, tool, handler };

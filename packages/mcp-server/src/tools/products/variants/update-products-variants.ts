@@ -16,13 +16,17 @@ export const tool: Tool = {
   inputSchema: {
     type: 'object',
     properties: {
+      org_id: {
+        type: 'string',
+        title: 'Org Id',
+      },
       product_id: {
         type: 'string',
         title: 'Product Id',
       },
       variant_id: {
         type: 'string',
-        title: 'Variant ID.',
+        title: 'Variant Id',
       },
       image_url: {
         type: 'string',
@@ -34,7 +38,7 @@ export const tool: Tool = {
       },
       price: {
         type: 'integer',
-        title: 'The Price!',
+        title: 'Price',
       },
     },
   },

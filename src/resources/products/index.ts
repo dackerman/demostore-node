@@ -6,8 +6,10 @@ export {
   type Product,
   type ProductDeleteResponse,
   type ProductCreateParams,
+  type ProductRetrieveParams,
   type ProductUpdateParams,
   type ProductListParams,
+  type ProductDeleteParams,
 } from './products';
 export {
   Variants,
@@ -15,5 +17,8 @@ export {
   type VariantListResponse,
   type VariantDeleteResponse,
   type VariantCreateParams,
+  type VariantRetrieveParams,
   type VariantUpdateParams,
+  type VariantListParams,
+  type VariantDeleteParams,
 } from './variants';
