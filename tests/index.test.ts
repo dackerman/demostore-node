@@ -24,6 +24,7 @@ describe('instantiate client', () => {
       baseURL: 'http://localhost:5000/',
       defaultHeaders: { 'X-My-Default-Header': '2' },
       authToken: '123e4567-e89b-12d3-a456-426614174000',
+      orgId: 'my_org',
     });
 
     test('they are used in the request', () => {
@@ -56,6 +57,7 @@ describe('instantiate client', () => {
         baseURL: 'http://localhost:5000/',
         defaultQuery: { apiVersion: 'foo' },
         authToken: '123e4567-e89b-12d3-a456-426614174000',
+        orgId: 'my_org',
       });
       expect(client.buildURL('/foo', null)).toEqual('http://localhost:5000/foo?apiVersion=foo');
     });
@@ -65,6 +67,7 @@ describe('instantiate client', () => {
         baseURL: 'http://localhost:5000/',
         defaultQuery: { apiVersion: 'foo', hello: 'world' },
         authToken: '123e4567-e89b-12d3-a456-426614174000',
+        orgId: 'my_org',
       });
       expect(client.buildURL('/foo', null)).toEqual('http://localhost:5000/foo?apiVersion=foo&hello=world');
     });
@@ -74,6 +77,7 @@ describe('instantiate client', () => {
         baseURL: 'http://localhost:5000/',
         defaultQuery: { hello: 'world' },
         authToken: '123e4567-e89b-12d3-a456-426614174000',
+        orgId: 'my_org',
       });
       expect(client.buildURL('/foo', { hello: undefined })).toEqual('http://localhost:5000/foo');
     });
@@ -83,6 +87,7 @@ describe('instantiate client', () => {
     const client = new StainlessStore({
       baseURL: 'http://localhost:5000/',
       authToken: '123e4567-e89b-12d3-a456-426614174000',
+      orgId: 'my_org',
       fetch: (url) => {
         return Promise.resolve(
           new Response(JSON.stringify({ url, custom: true }), {
@@ -101,6 +106,7 @@ describe('instantiate client', () => {
     const client = new StainlessStore({
       baseURL: 'http://localhost:5000/',
       authToken: '123e4567-e89b-12d3-a456-426614174000',
+      orgId: 'my_org',
       fetch: defaultFetch,
     });
   });
@@ -109,6 +115,7 @@ describe('instantiate client', () => {
     const client = new StainlessStore({
       baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010',
       authToken: '123e4567-e89b-12d3-a456-426614174000',
+      orgId: 'my_org',
       fetch: (...args) => {
         return new Promise((resolve, reject) =>
           setTimeout(
@@ -141,6 +148,7 @@ describe('instantiate client', () => {
     const client = new StainlessStore({
       baseURL: 'http://localhost:5000/',
       authToken: '123e4567-e89b-12d3-a456-426614174000',
+      orgId: 'my_org',
       fetch: testFetch,
     });
 
@@ -153,6 +161,7 @@ describe('instantiate client', () => {
       const client = new StainlessStore({
         baseURL: 'http://localhost:5000/custom/path/',
         authToken: '123e4567-e89b-12d3-a456-426614174000',
+        orgId: 'my_org',
       });
       expect(client.buildURL('/foo', null)).toEqual('http://localhost:5000/custom/path/foo');
     });
@@ -161,6 +170,7 @@ describe('instantiate client', () => {
       const client = new StainlessStore({
         baseURL: 'http://localhost:5000/custom/path',
         authToken: '123e4567-e89b-12d3-a456-426614174000',
+        orgId: 'my_org',
       });
       expect(client.buildURL('/foo', null)).toEqual('http://localhost:5000/custom/path/foo');
     });
@@ -173,55 +183,76 @@ describe('instantiate client', () => {
       const client = new StainlessStore({
         baseURL: 'https://example.com',
         authToken: '123e4567-e89b-12d3-a456-426614174000',
+        orgId: 'my_org',
       });
       expect(client.baseURL).toEqual('https://example.com');
     });
 
     test('env variable', () => {
       process.env['STAINLESS_STORE_BASE_URL'] = 'https://example.com/from_env';
-      const client = new StainlessStore({ authToken: '123e4567-e89b-12d3-a456-426614174000' });
+      const client = new StainlessStore({
+        authToken: '123e4567-e89b-12d3-a456-426614174000',
+        orgId: 'my_org',
+      });
       expect(client.baseURL).toEqual('https://example.com/from_env');
     });
 
     test('empty env variable', () => {
       process.env['STAINLESS_STORE_BASE_URL'] = ''; // empty
-      const client = new StainlessStore({ authToken: '123e4567-e89b-12d3-a456-426614174000' });
-      expect(client.baseURL).toEqual('http://localhost:8000/');
+      const client = new StainlessStore({
+        authToken: '123e4567-e89b-12d3-a456-426614174000',
+        orgId: 'my_org',
+      });
+      expect(client.baseURL).toEqual('http://localhost:8000');
     });
 
     test('blank env variable', () => {
       process.env['STAINLESS_STORE_BASE_URL'] = '  '; // blank
-      const client = new StainlessStore({ authToken: '123e4567-e89b-12d3-a456-426614174000' });
-      expect(client.baseURL).toEqual('http://localhost:8000/');
+      const client = new StainlessStore({
+        authToken: '123e4567-e89b-12d3-a456-426614174000',
+        orgId: 'my_org',
+      });
+      expect(client.baseURL).toEqual('http://localhost:8000');
     });
   });
 
   test('maxRetries option is correctly set', () => {
-    const client = new StainlessStore({ maxRetries: 4, authToken: '123e4567-e89b-12d3-a456-426614174000' });
+    const client = new StainlessStore({
+      maxRetries: 4,
+      authToken: '123e4567-e89b-12d3-a456-426614174000',
+      orgId: 'my_org',
+    });
     expect(client.maxRetries).toEqual(4);
 
     // default
-    const client2 = new StainlessStore({ authToken: '123e4567-e89b-12d3-a456-426614174000' });
+    const client2 = new StainlessStore({
+      authToken: '123e4567-e89b-12d3-a456-426614174000',
+      orgId: 'my_org',
+    });
     expect(client2.maxRetries).toEqual(2);
   });
 
   test('with environment variable arguments', () => {
     // set options via env var
     process.env['DEMOSTORE_API_KEY'] = '123e4567-e89b-12d3-a456-426614174000';
+    process.env['DEMOSTORE_ORG_ID'] = 'my_org';
     const client = new StainlessStore();
     expect(client.authToken).toBe('123e4567-e89b-12d3-a456-426614174000');
+    expect(client.orgId).toBe('my_org');
   });
 
   test('with overridden environment variable arguments', () => {
     // set options via env var
     process.env['DEMOSTORE_API_KEY'] = 'another 123e4567-e89b-12d3-a456-426614174000';
-    const client = new StainlessStore({ authToken: '123e4567-e89b-12d3-a456-426614174000' });
+    process.env['DEMOSTORE_ORG_ID'] = 'another my_org';
+    const client = new StainlessStore({ authToken: '123e4567-e89b-12d3-a456-426614174000', orgId: 'my_org' });
     expect(client.authToken).toBe('123e4567-e89b-12d3-a456-426614174000');
+    expect(client.orgId).toBe('my_org');
   });
 });
 
 describe('request building', () => {
-  const client = new StainlessStore({ authToken: '123e4567-e89b-12d3-a456-426614174000' });
+  const client = new StainlessStore({ authToken: '123e4567-e89b-12d3-a456-426614174000', orgId: 'my_org' });
 
   describe('Content-Length', () => {
     test('handles multi-byte characters', () => {
@@ -265,6 +296,7 @@ describe('retries', () => {
 
     const client = new StainlessStore({
       authToken: '123e4567-e89b-12d3-a456-426614174000',
+      orgId: 'my_org',
       timeout: 10,
       fetch: testFetch,
     });
@@ -299,6 +331,7 @@ describe('retries', () => {
 
     const client = new StainlessStore({
       authToken: '123e4567-e89b-12d3-a456-426614174000',
+      orgId: 'my_org',
       fetch: testFetch,
       maxRetries: 4,
     });
@@ -327,6 +360,7 @@ describe('retries', () => {
     };
     const client = new StainlessStore({
       authToken: '123e4567-e89b-12d3-a456-426614174000',
+      orgId: 'my_org',
       fetch: testFetch,
       maxRetries: 4,
     });
@@ -360,6 +394,7 @@ describe('retries', () => {
     };
     const client = new StainlessStore({
       authToken: '123e4567-e89b-12d3-a456-426614174000',
+      orgId: 'my_org',
       fetch: testFetch,
       maxRetries: 4,
       defaultHeaders: { 'X-Stainless-Retry-Count': null },
@@ -393,6 +428,7 @@ describe('retries', () => {
     };
     const client = new StainlessStore({
       authToken: '123e4567-e89b-12d3-a456-426614174000',
+      orgId: 'my_org',
       fetch: testFetch,
       maxRetries: 4,
     });
@@ -424,6 +460,7 @@ describe('retries', () => {
 
     const client = new StainlessStore({
       authToken: '123e4567-e89b-12d3-a456-426614174000',
+      orgId: 'my_org',
       fetch: testFetch,
     });
 
@@ -454,6 +491,7 @@ describe('retries', () => {
 
     const client = new StainlessStore({
       authToken: '123e4567-e89b-12d3-a456-426614174000',
+      orgId: 'my_org',
       fetch: testFetch,
     });
 

@@ -22,7 +22,8 @@ Add the following value to your `mcpServers` section. Make sure to provide any n
       "command": "npx",
       "args": ["-y", "@dackerman-stainless/demostore-mcp"],
       "env": {
-        "DEMOSTORE_API_KEY": "123e4567-e89b-12d3-a456-426614174000"
+        "DEMOSTORE_API_KEY": "123e4567-e89b-12d3-a456-426614174000",
+        "DEMOSTORE_ORG_ID": "my_org"
       }
     }
   }
@@ -54,6 +55,10 @@ Use `--list` to see the list of available tools, or see below.
 ## Available Tools
 
 The following tools are available in this MCP server.
+
+### Resource `funtools`:
+
+- `set_darkmode_funtools` (`write`): Set Darkmode Value
 
 ### Resource `products`:
 

@@ -7,11 +7,14 @@ import * as Pagination from './pagination';
 import { type OffsetPaginationParams, OffsetPaginationResponse } from './pagination';
 import * as Uploads from './uploads';
 import * as API from './resources/index';
+import { FuntoolSetDarkmodeParams, FuntoolSetDarkmodeResponse, Funtools } from './resources/funtools';
 import {
   Product,
   ProductCreateParams,
+  ProductDeleteParams,
   ProductDeleteResponse,
   ProductListParams,
+  ProductRetrieveParams,
   ProductUpdateParams,
   Products,
   ProductsOffsetPagination,
@@ -22,6 +25,11 @@ export interface ClientOptions {
    * The token to use for authentication
    */
   authToken?: string | undefined;
+
+  /**
+   * The organization ID context
+   */
+  orgId?: string | undefined;
 
   /**
    * Override the default base URL for the API, e.g., "https://api.example.com/v2/"
@@ -85,6 +93,7 @@ export interface ClientOptions {
  */
 export class StainlessStore extends Core.APIClient {
   authToken: string;
+  orgId: string;
 
   private _options: ClientOptions;
 
@@ -92,7 +101,8 @@ export class StainlessStore extends Core.APIClient {
    * API Client for interfacing with the Stainless Store API.
    *
    * @param {string | undefined} [opts.authToken=process.env['DEMOSTORE_API_KEY'] ?? undefined]
-   * @param {string} [opts.baseURL=process.env['STAINLESS_STORE_BASE_URL'] ?? http://localhost:8000/] - Override the default base URL for the API.
+   * @param {string | undefined} [opts.orgId=process.env['DEMOSTORE_ORG_ID'] ?? undefined]
+   * @param {string} [opts.baseURL=process.env['STAINLESS_STORE_BASE_URL'] ?? http://localhost:8000] - Override the default base URL for the API.
    * @param {number} [opts.timeout=1 minute] - The maximum amount of time (in milliseconds) the client will wait for a response before timing out.
    * @param {number} [opts.httpAgent] - An HTTP agent used to manage HTTP(s) connections.
    * @param {Core.Fetch} [opts.fetch] - Specify a custom `fetch` function implementation.
@@ -103,6 +113,7 @@ export class StainlessStore extends Core.APIClient {
   constructor({
     baseURL = Core.readEnv('STAINLESS_STORE_BASE_URL'),
     authToken = Core.readEnv('DEMOSTORE_API_KEY'),
+    orgId = Core.readEnv('DEMOSTORE_ORG_ID'),
     ...opts
   }: ClientOptions = {}) {
     if (authToken === undefined) {
@@ -110,11 +121,17 @@ export class StainlessStore extends Core.APIClient {
         "The DEMOSTORE_API_KEY environment variable is missing or empty; either provide it, or instantiate the StainlessStore client with an authToken option, like new StainlessStore({ authToken: '123e4567-e89b-12d3-a456-426614174000' }).",
       );
     }
+    if (orgId === undefined) {
+      throw new Errors.StainlessStoreError(
+        "The DEMOSTORE_ORG_ID environment variable is missing or empty; either provide it, or instantiate the StainlessStore client with an orgId option, like new StainlessStore({ orgId: 'my_org' }).",
+      );
+    }
 
     const options: ClientOptions = {
       authToken,
+      orgId,
       ...opts,
-      baseURL: baseURL || `http://localhost:8000/`,
+      baseURL: baseURL || `http://localhost:8000`,
     };
 
     super({
@@ -128,8 +145,10 @@ export class StainlessStore extends Core.APIClient {
     this._options = options;
 
     this.authToken = authToken;
+    this.orgId = orgId;
   }
 
+  funtools: API.Funtools = new API.Funtools(this);
   products: API.Products = new API.Products(this);
 
   protected override defaultQuery(): Core.DefaultQuery | undefined {
@@ -164,6 +183,7 @@ export class StainlessStore extends Core.APIClient {
   static fileFromPath = Uploads.fileFromPath;
 }
 
+StainlessStore.Funtools = Funtools;
 StainlessStore.Products = Products;
 StainlessStore.ProductsOffsetPagination = ProductsOffsetPagination;
 export declare namespace StainlessStore {
@@ -176,13 +196,21 @@ export declare namespace StainlessStore {
   };
 
   export {
+    Funtools as Funtools,
+    type FuntoolSetDarkmodeResponse as FuntoolSetDarkmodeResponse,
+    type FuntoolSetDarkmodeParams as FuntoolSetDarkmodeParams,
+  };
+
+  export {
     Products as Products,
     type Product as Product,
     type ProductDeleteResponse as ProductDeleteResponse,
     ProductsOffsetPagination as ProductsOffsetPagination,
     type ProductCreateParams as ProductCreateParams,
+    type ProductRetrieveParams as ProductRetrieveParams,
     type ProductUpdateParams as ProductUpdateParams,
     type ProductListParams as ProductListParams,
+    type ProductDeleteParams as ProductDeleteParams,
   };
 }
 

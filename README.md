@@ -115,6 +115,7 @@ You can use the `maxRetries` option to configure or disable this:
 const client = new StainlessStore({
   maxRetries: 0, // default is 2
   authToken: '123e4567-e89b-12d3-a456-426614174000',
+  orgId: 'my_org',
 });
 
 // Or, configure per-request:
@@ -133,6 +134,7 @@ Requests time out after 1 minute by default. You can configure this with a `time
 const client = new StainlessStore({
   timeout: 20 * 1000, // 20 seconds (default is 1 minute)
   authToken: '123e4567-e89b-12d3-a456-426614174000',
+  orgId: 'my_org',
 });
 
 // Override per-request:
@@ -300,6 +302,7 @@ import { HttpsProxyAgent } from 'https-proxy-agent';
 const client = new StainlessStore({
   httpAgent: new HttpsProxyAgent(process.env.PROXY_URL),
   authToken: '123e4567-e89b-12d3-a456-426614174000',
+  orgId: 'my_org',
 });
 
 // Override per-request:
