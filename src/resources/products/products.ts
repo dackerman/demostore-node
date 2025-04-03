@@ -7,8 +7,11 @@ import * as VariantsAPI from './variants';
 import {
   ProductVariant,
   VariantCreateParams,
+  VariantDeleteParams,
   VariantDeleteResponse,
+  VariantListParams,
   VariantListResponse,
+  VariantRetrieveParams,
   VariantUpdateParams,
   Variants,
 } from './variants';
@@ -20,15 +23,30 @@ export class Products extends APIResource {
   /**
    * Create Product
    */
-  create(body: ProductCreateParams, options?: Core.RequestOptions): Core.APIPromise<Product> {
-    return this._client.post('/products', { body, ...options });
+  create(params: ProductCreateParams, options?: Core.RequestOptions): Core.APIPromise<Product> {
+    const { org_id = this._client.orgId, ...body } = params;
+    return this._client.post(`/orgs/${org_id}/products`, { body, ...options });
   }
 
   /**
    * Read Product
    */
-  retrieve(productId: string, options?: Core.RequestOptions): Core.APIPromise<Product> {
-    return this._client.get(`/products/${productId}`, options);
+  retrieve(
+    productId: string,
+    params?: ProductRetrieveParams,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<Product>;
+  retrieve(productId: string, options?: Core.RequestOptions): Core.APIPromise<Product>;
+  retrieve(
+    productId: string,
+    params: ProductRetrieveParams | Core.RequestOptions = {},
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<Product> {
+    if (isRequestOptions(params)) {
+      return this.retrieve(productId, {}, params);
+    }
+    const { org_id = this._client.orgId } = params;
+    return this._client.get(`/orgs/${org_id}/products/${productId}`, options);
   }
 
   /**
@@ -36,35 +54,54 @@ export class Products extends APIResource {
    */
   update(
     productId: string,
-    body: ProductUpdateParams,
+    params: ProductUpdateParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<Product> {
-    return this._client.put(`/products/${productId}`, { body, ...options });
+    const { org_id = this._client.orgId, ...body } = params;
+    return this._client.put(`/orgs/${org_id}/products/${productId}`, { body, ...options });
   }
 
   /**
    * Read Products
    */
   list(
-    query?: ProductListParams,
+    params?: ProductListParams,
     options?: Core.RequestOptions,
   ): Core.PagePromise<ProductsOffsetPagination, Product>;
   list(options?: Core.RequestOptions): Core.PagePromise<ProductsOffsetPagination, Product>;
   list(
-    query: ProductListParams | Core.RequestOptions = {},
+    params: ProductListParams | Core.RequestOptions = {},
     options?: Core.RequestOptions,
   ): Core.PagePromise<ProductsOffsetPagination, Product> {
-    if (isRequestOptions(query)) {
-      return this.list({}, query);
+    if (isRequestOptions(params)) {
+      return this.list({}, params);
     }
-    return this._client.getAPIList('/products', ProductsOffsetPagination, { query, ...options });
+    const { org_id = this._client.orgId, ...query } = params;
+    return this._client.getAPIList(`/orgs/${org_id}/products`, ProductsOffsetPagination, {
+      query,
+      ...options,
+    });
   }
 
   /**
    * Delete Product
    */
-  delete(productId: string, options?: Core.RequestOptions): Core.APIPromise<ProductDeleteResponse> {
-    return this._client.delete(`/products/${productId}`, options);
+  delete(
+    productId: string,
+    params?: ProductDeleteParams,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<ProductDeleteResponse>;
+  delete(productId: string, options?: Core.RequestOptions): Core.APIPromise<ProductDeleteResponse>;
+  delete(
+    productId: string,
+    params: ProductDeleteParams | Core.RequestOptions = {},
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<ProductDeleteResponse> {
+    if (isRequestOptions(params)) {
+      return this.delete(productId, {}, params);
+    }
+    const { org_id = this._client.orgId } = params;
+    return this._client.delete(`/orgs/${org_id}/products/${productId}`, options);
   }
 }
 
@@ -80,9 +117,6 @@ export interface Product {
 
   name: string;
 
-  /**
-   * Price.
-   */
   price: number;
 
   product_id: string;
@@ -93,26 +127,73 @@ export interface ProductDeleteResponse {
 }
 
 export interface ProductCreateParams {
+  /**
+   * Path param:
+   */
+  org_id?: string;
+
+  /**
+   * Body param:
+   */
   description: string;
 
+  /**
+   * Body param:
+   */
   image_url: string;
 
+  /**
+   * Body param:
+   */
   name: string;
 
+  /**
+   * Body param:
+   */
   price: number;
+}
+
+export interface ProductRetrieveParams {
+  org_id?: string;
 }
 
 export interface ProductUpdateParams {
+  /**
+   * Path param:
+   */
+  org_id?: string;
+
+  /**
+   * Body param:
+   */
   description: string;
 
+  /**
+   * Body param:
+   */
   image_url: string;
 
+  /**
+   * Body param:
+   */
   name: string;
 
+  /**
+   * Body param:
+   */
   price: number;
 }
 
-export interface ProductListParams extends OffsetPaginationParams {}
+export interface ProductListParams extends OffsetPaginationParams {
+  /**
+   * Path param:
+   */
+  org_id?: string;
+}
+
+export interface ProductDeleteParams {
+  org_id?: string;
+}
 
 Products.ProductsOffsetPagination = ProductsOffsetPagination;
 Products.Variants = Variants;
@@ -123,8 +204,10 @@ export declare namespace Products {
     type ProductDeleteResponse as ProductDeleteResponse,
     ProductsOffsetPagination as ProductsOffsetPagination,
     type ProductCreateParams as ProductCreateParams,
+    type ProductRetrieveParams as ProductRetrieveParams,
     type ProductUpdateParams as ProductUpdateParams,
     type ProductListParams as ProductListParams,
+    type ProductDeleteParams as ProductDeleteParams,
   };
 
   export {
@@ -133,6 +216,9 @@ export declare namespace Products {
     type VariantListResponse as VariantListResponse,
     type VariantDeleteResponse as VariantDeleteResponse,
     type VariantCreateParams as VariantCreateParams,
+    type VariantRetrieveParams as VariantRetrieveParams,
     type VariantUpdateParams as VariantUpdateParams,
+    type VariantListParams as VariantListParams,
+    type VariantDeleteParams as VariantDeleteParams,
   };
 }

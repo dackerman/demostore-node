@@ -1,6 +1,7 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 import { APIResource } from '../../resource';
+import { isRequestOptions } from '../../core';
 import * as Core from '../../core';
 
 export class Variants extends APIResource {
@@ -9,10 +10,11 @@ export class Variants extends APIResource {
    */
   create(
     productId: string,
-    body: VariantCreateParams,
+    params: VariantCreateParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<ProductVariant> {
-    return this._client.post(`/products/${productId}/variants`, { body, ...options });
+    const { org_id = this._client.orgId, ...body } = params;
+    return this._client.post(`/orgs/${org_id}/products/${productId}/variants`, { body, ...options });
   }
 
   /**
@@ -21,9 +23,25 @@ export class Variants extends APIResource {
   retrieve(
     productId: string,
     variantId: string,
+    params?: VariantRetrieveParams,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<ProductVariant>;
+  retrieve(
+    productId: string,
+    variantId: string,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<ProductVariant>;
+  retrieve(
+    productId: string,
+    variantId: string,
+    params: VariantRetrieveParams | Core.RequestOptions = {},
     options?: Core.RequestOptions,
   ): Core.APIPromise<ProductVariant> {
-    return this._client.get(`/products/${productId}/variants/${variantId}`, options);
+    if (isRequestOptions(params)) {
+      return this.retrieve(productId, variantId, {}, params);
+    }
+    const { org_id = this._client.orgId } = params;
+    return this._client.get(`/orgs/${org_id}/products/${productId}/variants/${variantId}`, options);
   }
 
   /**
@@ -32,17 +50,35 @@ export class Variants extends APIResource {
   update(
     productId: string,
     variantId: string,
-    body: VariantUpdateParams,
+    params: VariantUpdateParams,
     options?: Core.RequestOptions,
   ): Core.APIPromise<ProductVariant> {
-    return this._client.put(`/products/${productId}/variants/${variantId}`, { body, ...options });
+    const { org_id = this._client.orgId, ...body } = params;
+    return this._client.put(`/orgs/${org_id}/products/${productId}/variants/${variantId}`, {
+      body,
+      ...options,
+    });
   }
 
   /**
    * Read Product Variants
    */
-  list(productId: string, options?: Core.RequestOptions): Core.APIPromise<VariantListResponse> {
-    return this._client.get(`/products/${productId}/variants`, options);
+  list(
+    productId: string,
+    params?: VariantListParams,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<VariantListResponse>;
+  list(productId: string, options?: Core.RequestOptions): Core.APIPromise<VariantListResponse>;
+  list(
+    productId: string,
+    params: VariantListParams | Core.RequestOptions = {},
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<VariantListResponse> {
+    if (isRequestOptions(params)) {
+      return this.list(productId, {}, params);
+    }
+    const { org_id = this._client.orgId } = params;
+    return this._client.get(`/orgs/${org_id}/products/${productId}/variants`, options);
   }
 
   /**
@@ -51,14 +87,30 @@ export class Variants extends APIResource {
   delete(
     productId: string,
     variantId: string,
+    params?: VariantDeleteParams,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<VariantDeleteResponse>;
+  delete(
+    productId: string,
+    variantId: string,
+    options?: Core.RequestOptions,
+  ): Core.APIPromise<VariantDeleteResponse>;
+  delete(
+    productId: string,
+    variantId: string,
+    params: VariantDeleteParams | Core.RequestOptions = {},
     options?: Core.RequestOptions,
   ): Core.APIPromise<VariantDeleteResponse> {
-    return this._client.delete(`/products/${productId}/variants/${variantId}`, options);
+    if (isRequestOptions(params)) {
+      return this.delete(productId, variantId, {}, params);
+    }
+    const { org_id = this._client.orgId } = params;
+    return this._client.delete(`/orgs/${org_id}/products/${productId}/variants/${variantId}`, options);
   }
 }
 
 /**
- * Represents a ProductVariant
+ * Represents a ProductVariant record
  */
 export interface ProductVariant {
   image_url: string;
@@ -79,19 +131,59 @@ export interface VariantDeleteResponse {
 }
 
 export interface VariantCreateParams {
+  /**
+   * Path param:
+   */
+  org_id?: string;
+
+  /**
+   * Body param:
+   */
   image_url: string;
 
+  /**
+   * Body param:
+   */
   name: string;
 
+  /**
+   * Body param:
+   */
   price: number;
 }
 
+export interface VariantRetrieveParams {
+  org_id?: string;
+}
+
 export interface VariantUpdateParams {
+  /**
+   * Path param:
+   */
+  org_id?: string;
+
+  /**
+   * Body param:
+   */
   image_url: string;
 
+  /**
+   * Body param:
+   */
   name: string;
 
+  /**
+   * Body param:
+   */
   price: number;
+}
+
+export interface VariantListParams {
+  org_id?: string;
+}
+
+export interface VariantDeleteParams {
+  org_id?: string;
 }
 
 export declare namespace Variants {
@@ -100,6 +192,9 @@ export declare namespace Variants {
     type VariantListResponse as VariantListResponse,
     type VariantDeleteResponse as VariantDeleteResponse,
     type VariantCreateParams as VariantCreateParams,
+    type VariantRetrieveParams as VariantRetrieveParams,
     type VariantUpdateParams as VariantUpdateParams,
+    type VariantListParams as VariantListParams,
+    type VariantDeleteParams as VariantDeleteParams,
   };
 }

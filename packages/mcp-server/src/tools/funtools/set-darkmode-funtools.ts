@@ -5,32 +5,28 @@ import type { Metadata } from '../';
 import StainlessStore from '@dackerman-stainless/demostore';
 
 export const metadata: Metadata = {
-  resource: 'products',
-  operation: 'read',
+  resource: 'funtools',
+  operation: 'write',
   tags: [],
 };
 
 export const tool: Tool = {
-  name: 'retrieve_products',
-  description: 'Read Product',
+  name: 'set_darkmode_funtools',
+  description: 'Set Darkmode Value',
   inputSchema: {
     type: 'object',
     properties: {
-      org_id: {
-        type: 'string',
-        title: 'Org Id',
-      },
-      product_id: {
-        type: 'string',
-        title: 'Product Id',
+      darkmode: {
+        type: 'boolean',
+        title: 'Darkmode',
       },
     },
   },
 };
 
 export const handler = (client: StainlessStore, args: any) => {
-  const { product_id, ...body } = args;
-  return client.products.retrieve(product_id, body);
+  const { ...body } = args;
+  return client.funtools.setDarkmode(body);
 };
 
 export default { metadata, tool, handler };

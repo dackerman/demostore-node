@@ -16,6 +16,10 @@ export const tool: Tool = {
   inputSchema: {
     type: 'object',
     properties: {
+      org_id: {
+        type: 'string',
+        title: 'Org Id',
+      },
       description: {
         type: 'string',
         title: 'Description',
