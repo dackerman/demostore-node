@@ -9,8 +9,8 @@ It is generated with [Stainless](https://www.stainless.com/).
 You can run the MCP Server directly via `npx`:
 
 ```sh
-export DEMOSTORE_API_KEY = "123e4567-e89b-12d3-a456-426614174000"
-export DEMOSTORE_ORG_ID = "my_org"
+export DEMOSTORE_API_KEY="123e4567-e89b-12d3-a456-426614174000"
+export DEMOSTORE_ORG_ID="my_org"
 npx -y @dackerman-stainless/demostore-mcp
 ```
 
