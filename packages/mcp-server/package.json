@@ -1,6 +1,6 @@
 {
   "name": "@dackerman-stainless/demostore-mcp",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "description": "The official MCP Server for the Stainless Store API",
   "author": "Stainless Store <dev-feedback@dackerman-store.com>",
   "types": "dist/index.d.ts",
