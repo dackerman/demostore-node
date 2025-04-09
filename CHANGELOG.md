@@ -1,5 +1,26 @@
 # Changelog
 
+## 0.7.1 (2025-04-09)
+
+Full Changelog: [v0.7.0...v0.7.1](https://github.com/dackerman/demostore-node/compare/v0.7.0...v0.7.1)
+
+### Bug Fixes
+
+* **api:** improve type resolution when importing as a package ([#91](https://github.com/dackerman/demostore-node/issues/91)) ([41fed99](https://github.com/dackerman/demostore-node/commit/41fed99c6537ca5d1cb4ffee438db9df42e451e0))
+* **mcp:** point homepage and repo for mcp package to the `packages/mcp-server` directory ([#95](https://github.com/dackerman/demostore-node/issues/95)) ([7f0e71f](https://github.com/dackerman/demostore-node/commit/7f0e71f131098ae283d4326e9d3f1bebaa007756))
+* **mcp:** remove debug logging ([#93](https://github.com/dackerman/demostore-node/issues/93)) ([ce0d414](https://github.com/dackerman/demostore-node/commit/ce0d4148b9660881f07dce212bda2e6c3c696c1e))
+
+
+### Chores
+
+* **internal:** version bump ([#89](https://github.com/dackerman/demostore-node/issues/89)) ([4ec7976](https://github.com/dackerman/demostore-node/commit/4ec797619ace8322fcdaeb1ff6904bea2b12e6ed))
+
+
+### Documentation
+
+* **mcp:** improve MCP readme docs ([#92](https://github.com/dackerman/demostore-node/issues/92)) ([9600b0e](https://github.com/dackerman/demostore-node/commit/9600b0eef4a96cc3d2648def61c703709c721dea))
+* **mcp:** update env vars in README ([#94](https://github.com/dackerman/demostore-node/issues/94)) ([f260a73](https://github.com/dackerman/demostore-node/commit/f260a738ecff52411301fd5eea220cce0a21a4db))
+
 ## 0.7.0 (2025-04-03)
 
 Full Changelog: [v0.6.0...v0.7.0](https://github.com/dackerman/demostore-node/compare/v0.6.0...v0.7.0)
