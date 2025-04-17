@@ -1,5 +1,22 @@
 # Changelog
 
+## 0.7.2 (2025-04-17)
+
+Full Changelog: [v0.7.1...v0.7.2](https://github.com/dackerman/demostore-node/compare/v0.7.1...v0.7.2)
+
+### Bug Fixes
+
+* **mcp:** fix readEnv type error ([b7c6723](https://github.com/dackerman/demostore-node/commit/b7c67238fed07685aaf7228dff77c9467fad36cc))
+* **mcp:** include all necessary env vars in client instantiation ([c2d9de5](https://github.com/dackerman/demostore-node/commit/c2d9de58bd815561144385dd1d590632f2ee46ca))
+
+
+### Chores
+
+* **client:** minor internal fixes ([2558ef7](https://github.com/dackerman/demostore-node/commit/2558ef75a07b58795c85289aea33cc8d34600d4e))
+* **internal:** codegen related update ([4533e6c](https://github.com/dackerman/demostore-node/commit/4533e6c76c9e242f6bb19df9301a2b7929114e83))
+* **internal:** reduce CI branch coverage ([bb5337c](https://github.com/dackerman/demostore-node/commit/bb5337c952dd61ba2f11e578668a995e759048c1))
+* **internal:** upload builds and expand CI branch coverage ([3b95b79](https://github.com/dackerman/demostore-node/commit/3b95b7971ca77e3e92fb17c9bf39a1b4d6fde353))
+
 ## 0.7.1 (2025-04-09)
 
 Full Changelog: [v0.7.0...v0.7.1](https://github.com/dackerman/demostore-node/compare/v0.7.0...v0.7.1)
