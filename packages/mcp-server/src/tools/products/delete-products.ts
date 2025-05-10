@@ -28,8 +28,8 @@ export const tool: Tool = {
   },
 };
 
-export const handler = (client: StainlessStore, args: any) => {
-  const { product_id, ...body } = args;
+export const handler = (client: StainlessStore, args: Record<string, unknown> | undefined) => {
+  const { product_id, ...body } = args as any;
   return client.products.delete(product_id, body);
 };
 

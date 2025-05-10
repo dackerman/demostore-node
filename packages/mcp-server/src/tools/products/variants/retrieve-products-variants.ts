@@ -32,8 +32,8 @@ export const tool: Tool = {
   },
 };
 
-export const handler = (client: StainlessStore, args: any) => {
-  const { product_id, variant_id, ...body } = args;
+export const handler = (client: StainlessStore, args: Record<string, unknown> | undefined) => {
+  const { product_id, variant_id, ...body } = args as any;
   return client.products.variants.retrieve(product_id, variant_id, body);
 };
 

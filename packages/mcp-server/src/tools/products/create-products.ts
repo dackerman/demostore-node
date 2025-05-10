@@ -40,8 +40,8 @@ export const tool: Tool = {
   },
 };
 
-export const handler = (client: StainlessStore, args: any) => {
-  const { ...body } = args;
+export const handler = (client: StainlessStore, args: Record<string, unknown> | undefined) => {
+  const body = args as any;
   return client.products.create(body);
 };
 
