@@ -1,5 +1,44 @@
 # Changelog
 
+## 0.8.0 (2025-05-12)
+
+Full Changelog: [v0.7.1...v0.8.0](https://github.com/dackerman/demostore-node/compare/v0.7.1...v0.8.0)
+
+### Features
+
+* **mcp:** support dynamically discovering and invoking tools for APIs with many endpoints ([e7c6630](https://github.com/dackerman/demostore-node/commit/e7c66308b86b57dc6cbce0321ad2a0e814ec4c84))
+* more gracefully handle $refs and work around schema limitations ([96054d4](https://github.com/dackerman/demostore-node/commit/96054d41792b19bd311b21651f61b8f16736f5b2))
+
+
+### Bug Fixes
+
+* **mcp:** explicitly include zod and zod-to-json-schema in package.json ([40664a4](https://github.com/dackerman/demostore-node/commit/40664a4081f0519ffd6bd96c7cfee11648b1a06d))
+* **mcp:** fix readEnv type error ([b7c6723](https://github.com/dackerman/demostore-node/commit/b7c67238fed07685aaf7228dff77c9467fad36cc))
+* **mcp:** include all necessary env vars in client instantiation ([c2d9de5](https://github.com/dackerman/demostore-node/commit/c2d9de58bd815561144385dd1d590632f2ee46ca))
+* **mcp:** remove ajv dependency so MCP servers are more compatible with Cloudflare Workers ([b3c1dbf](https://github.com/dackerman/demostore-node/commit/b3c1dbf7440c4352d5d4545bb5289eba0a7fe616))
+
+
+### Chores
+
+* **build:** automatically build subpackages if present ([ce33d7d](https://github.com/dackerman/demostore-node/commit/ce33d7da142cd913759d028e7be62d4994110843))
+* **ci:** add timeout thresholds for CI jobs ([e259da7](https://github.com/dackerman/demostore-node/commit/e259da781704eee4a5a9815cbc733e325c813f4d))
+* **ci:** bump node version for release workflows ([87a5287](https://github.com/dackerman/demostore-node/commit/87a5287c68c985ab43f9e7a7d91ad2abb1f9ef3e))
+* **ci:** only use depot for staging repos ([88f3d9e](https://github.com/dackerman/demostore-node/commit/88f3d9e8336a9b75ffce2c62e900c581546728cc))
+* **client:** minor internal fixes ([2558ef7](https://github.com/dackerman/demostore-node/commit/2558ef75a07b58795c85289aea33cc8d34600d4e))
+* **internal:** codegen related update ([9e3e579](https://github.com/dackerman/demostore-node/commit/9e3e579892661d0ac78579c10efacf9b11a97772))
+* **internal:** codegen related update ([15dfa16](https://github.com/dackerman/demostore-node/commit/15dfa16a48c5c229d63c8ad7efcf1e27c8e52db4))
+* **internal:** codegen related update ([4533e6c](https://github.com/dackerman/demostore-node/commit/4533e6c76c9e242f6bb19df9301a2b7929114e83))
+* **internal:** reduce CI branch coverage ([bb5337c](https://github.com/dackerman/demostore-node/commit/bb5337c952dd61ba2f11e578668a995e759048c1))
+* **internal:** update dependency ([d55ae70](https://github.com/dackerman/demostore-node/commit/d55ae70db170265a8b78f68533a8498d960720f3))
+* **internal:** upload builds and expand CI branch coverage ([3b95b79](https://github.com/dackerman/demostore-node/commit/3b95b7971ca77e3e92fb17c9bf39a1b4d6fde353))
+* remove custom code ([291b99f](https://github.com/dackerman/demostore-node/commit/291b99fd5a548bd11ef7d005c52c4a5389ff712e))
+* **tests:** use node 22 for CI tests ([816bc48](https://github.com/dackerman/demostore-node/commit/816bc4828781abaf95c08ecc357be8a44f410a7e))
+
+
+### Documentation
+
+* **readme:** fix typo ([9f0a5f9](https://github.com/dackerman/demostore-node/commit/9f0a5f9ff1b80a5b16879a4e8139e83eb459e35c))
+
 ## 0.7.1 (2025-04-09)
 
 Full Changelog: [v0.7.0...v0.7.1](https://github.com/dackerman/demostore-node/compare/v0.7.0...v0.7.1)
