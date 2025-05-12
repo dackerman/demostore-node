@@ -19,7 +19,7 @@ export { endpoints } from './tools';
 export const server = new McpServer(
   {
     name: 'dackerman_stainless_demostore_api',
-    version: '0.7.1',
+    version: '0.8.0',
   },
   {
     capabilities: {
