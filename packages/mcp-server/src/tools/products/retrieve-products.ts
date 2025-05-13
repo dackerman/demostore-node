@@ -19,6 +19,7 @@ export const tool: Tool = {
       org_id: {
         type: 'string',
         title: 'Org Id',
+        description: "The ID of the organization you're a part of",
       },
       product_id: {
         type: 'string',
