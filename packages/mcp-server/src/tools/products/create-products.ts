@@ -18,7 +18,7 @@ export const tool: Tool = {
     properties: {
       org_id: {
         type: 'string',
-        title: 'Org Id',
+        title: 'The Org Id',
       },
       description: {
         type: 'string',
