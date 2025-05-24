@@ -1,5 +1,25 @@
 # Changelog
 
+## 0.9.0 (2025-05-24)
+
+Full Changelog: [v0.8.0...v0.9.0](https://github.com/dackerman/demostore-node/compare/v0.8.0...v0.9.0)
+
+### Features
+
+* **api:** update via SDK Studio ([7a8e0ef](https://github.com/dackerman/demostore-node/commit/7a8e0ef13b6c3ed10a4394a72101f19cbdc27eab))
+* **api:** update via SDK Studio ([60860ce](https://github.com/dackerman/demostore-node/commit/60860ce8e90793136ee891541f79e952c3d1481f))
+* **api:** update via SDK Studio ([192faab](https://github.com/dackerman/demostore-node/commit/192faab60fbe66bb0bb894384dab7e0232d8b689))
+
+
+### Bug Fixes
+
+* **mcp:** fix cursor schema transformation issue with recursive references ([37b8966](https://github.com/dackerman/demostore-node/commit/37b89663fb3a0fd9aedb67408df47c5c8d9f158e))
+
+
+### Chores
+
+* **docs:** grammar improvements ([7442a23](https://github.com/dackerman/demostore-node/commit/7442a2385bcd4dad4446dd36f399596a24469fc3))
+
 ## 0.8.0 (2025-05-12)
 
 Full Changelog: [v0.7.1...v0.8.0](https://github.com/dackerman/demostore-node/compare/v0.7.1...v0.8.0)
