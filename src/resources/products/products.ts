@@ -154,6 +154,9 @@ export interface ProductCreateParams {
 }
 
 export interface ProductRetrieveParams {
+  /**
+   * The ID of the organization
+   */
   org_id?: string;
 }
 
