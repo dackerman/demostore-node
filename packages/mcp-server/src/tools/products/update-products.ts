@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'products',
   operation: 'write',
   tags: [],
+  httpMethod: 'put',
+  httpPath: '/orgs/{org_id}/products/{product_id}',
+  operationId: 'update_product_orgs__org_id__products__product_id__put',
 };
 
 export const tool: Tool = {

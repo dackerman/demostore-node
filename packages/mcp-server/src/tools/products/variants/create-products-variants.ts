@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'products.variants',
   operation: 'write',
   tags: [],
+  httpMethod: 'post',
+  httpPath: '/orgs/{org_id}/products/{product_id}/variants',
+  operationId: 'create_product_variant_orgs__org_id__products__product_id__variants_post',
 };
 
 export const tool: Tool = {

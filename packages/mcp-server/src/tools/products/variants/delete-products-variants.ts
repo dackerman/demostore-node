@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'products.variants',
   operation: 'write',
   tags: [],
+  httpMethod: 'delete',
+  httpPath: '/orgs/{org_id}/products/{product_id}/variants/{variant_id}',
+  operationId: 'delete_product_variant_orgs__org_id__products__product_id__variants__variant_id__delete',
 };
 
 export const tool: Tool = {

@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'products.variants',
   operation: 'read',
   tags: [],
+  httpMethod: 'get',
+  httpPath: '/orgs/{org_id}/products/{product_id}/variants/{variant_id}',
+  operationId: 'read_product_variant_orgs__org_id__products__product_id__variants__variant_id__get',
 };
 
 export const tool: Tool = {

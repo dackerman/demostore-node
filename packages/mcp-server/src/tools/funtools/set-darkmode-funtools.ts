@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'funtools',
   operation: 'write',
   tags: [],
+  httpMethod: 'put',
+  httpPath: '/funtools/set_darkmode_value',
+  operationId: 'set_darkmode_value_funtools_set_darkmode_value_put',
 };
 
 export const tool: Tool = {
