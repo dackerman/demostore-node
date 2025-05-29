@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'products',
   operation: 'read',
   tags: [],
+  httpMethod: 'get',
+  httpPath: '/orgs/{org_id}/products',
+  operationId: 'read_products_orgs__org_id__products_get',
 };
 
 export const tool: Tool = {
