@@ -1,7 +1,8 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import StainlessStore from '@dackerman-stainless/demostore';
-import { Tool } from '@modelcontextprotocol/sdk/types.js';
+import { Metadata, Endpoint, HandlerFunction } from './types';
+
+export { Metadata, Endpoint, HandlerFunction };
 
 import set_darkmode_funtools from './funtools/set-darkmode-funtools';
 import create_products from './products/create-products';
@@ -14,27 +15,6 @@ import retrieve_products_variants from './products/variants/retrieve-products-va
 import update_products_variants from './products/variants/update-products-variants';
 import list_products_variants from './products/variants/list-products-variants';
 import delete_products_variants from './products/variants/delete-products-variants';
-
-export type HandlerFunction = (
-  client: StainlessStore,
-  args: Record<string, unknown> | undefined,
-) => Promise<any>;
-
-export type Metadata = {
-  resource: string;
-  operation: 'read' | 'write';
-  tags: string[];
-
-  httpMethod?: string;
-  httpPath?: string;
-  operationId?: string;
-};
-
-export type Endpoint = {
-  metadata: Metadata;
-  tool: Tool;
-  handler: HandlerFunction;
-};
 
 export const endpoints: Endpoint[] = [];
 
