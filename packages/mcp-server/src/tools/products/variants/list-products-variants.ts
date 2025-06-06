@@ -1,5 +1,7 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
+import { asTextContentResult } from '@dackerman-stainless/demostore-mcp/tools/types';
+
 import { Tool } from '@modelcontextprotocol/sdk/types.js';
 import type { Metadata } from '../../';
 import StainlessStore from '@dackerman-stainless/demostore';
@@ -31,9 +33,9 @@ export const tool: Tool = {
   },
 };
 
-export const handler = (client: StainlessStore, args: Record<string, unknown> | undefined) => {
+export const handler = async (client: StainlessStore, args: Record<string, unknown> | undefined) => {
   const { product_id, ...body } = args as any;
-  return client.products.variants.list(product_id, body);
+  return asTextContentResult(await client.products.variants.list(product_id, body));
 };
 
 export default { metadata, tool, handler };
