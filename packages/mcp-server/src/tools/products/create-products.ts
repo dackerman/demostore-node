@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 
 export const tool: Tool = {
   name: 'create_products',
-  description: 'Create Product',
+  description: 'Create Product!',
   inputSchema: {
     type: 'object',
     properties: {
