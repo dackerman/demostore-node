@@ -24,18 +24,14 @@ import StainlessStore from '@dackerman-stainless/demostore';
 
 const client = new StainlessStore();
 
-async function main() {
-  const product = await client.products.create({
-    description: 'description',
-    image_url: 'image_url',
-    name: 'name',
-    price: 0,
-  });
+const product = await client.products.create({
+  description: 'description',
+  image_url: 'image_url',
+  name: 'name',
+  price: 0,
+});
 
-  console.log(product.product_id);
-}
-
-main();
+console.log(product.product_id);
 ```
 
 ### Request & Response types
@@ -48,17 +44,13 @@ import StainlessStore from '@dackerman-stainless/demostore';
 
 const client = new StainlessStore();
 
-async function main() {
-  const params: StainlessStore.ProductCreateParams = {
-    description: 'description',
-    image_url: 'image_url',
-    name: 'name',
-    price: 0,
-  };
-  const product: StainlessStore.Product = await client.products.create(params);
-}
-
-main();
+const params: StainlessStore.ProductCreateParams = {
+  description: 'description',
+  image_url: 'image_url',
+  name: 'name',
+  price: 0,
+};
+const product: StainlessStore.Product = await client.products.create(params);
 ```
 
 Documentation for each method, request param, and response field are available in docstrings and will appear on hover in most modern editors.
@@ -71,21 +63,17 @@ a subclass of `APIError` will be thrown:
 
 <!-- prettier-ignore -->
 ```ts
-async function main() {
-  const product = await client.products
-    .create({ description: 'description', image_url: 'image_url', name: 'name', price: 0 })
-    .catch(async (err) => {
-      if (err instanceof StainlessStore.APIError) {
-        console.log(err.status); // 400
-        console.log(err.name); // BadRequestError
-        console.log(err.headers); // {server: 'nginx', ...}
-      } else {
-        throw err;
-      }
-    });
-}
-
-main();
+const product = await client.products
+  .create({ description: 'description', image_url: 'image_url', name: 'name', price: 0 })
+  .catch(async (err) => {
+    if (err instanceof StainlessStore.APIError) {
+      console.log(err.status); // 400
+      console.log(err.name); // BadRequestError
+      console.log(err.headers); // {server: 'nginx', ...}
+    } else {
+      throw err;
+    }
+  });
 ```
 
 Error codes are as follows:

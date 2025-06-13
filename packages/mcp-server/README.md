@@ -173,7 +173,7 @@ The following tools are available in this MCP server.
 
 ### Resource `products`:
 
-- `create_products` (`write`): Create Product
+- `create_products` (`write`): Create Product!
 - `retrieve_products` (`read`): Read Product
 - `update_products` (`write`): Update Product
 - `list_products` (`read`): Read Products

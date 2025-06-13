@@ -1,5 +1,34 @@
 # Changelog
 
+## 0.9.0 (2025-06-10)
+
+Full Changelog: [v0.8.0...v0.9.0](https://github.com/dackerman/demostore-node/compare/v0.8.0...v0.9.0)
+
+### Features
+
+* **api:** update via SDK Studio ([59e6d5c](https://github.com/dackerman/demostore-node/commit/59e6d5c6e346ebd67cd26d6d872ad8a856b65e38))
+* **api:** update via SDK Studio ([8c2d044](https://github.com/dackerman/demostore-node/commit/8c2d044e73d88a6042fcf4874474b2635f45c07b))
+* **api:** update via SDK Studio ([7a8e0ef](https://github.com/dackerman/demostore-node/commit/7a8e0ef13b6c3ed10a4394a72101f19cbdc27eab))
+* **api:** update via SDK Studio ([60860ce](https://github.com/dackerman/demostore-node/commit/60860ce8e90793136ee891541f79e952c3d1481f))
+* **api:** update via SDK Studio ([192faab](https://github.com/dackerman/demostore-node/commit/192faab60fbe66bb0bb894384dab7e0232d8b689))
+* **mcp:** implement support for binary responses ([040aac7](https://github.com/dackerman/demostore-node/commit/040aac7b88c1f4317af78bd1067af659183140b6))
+* **mcp:** include http information in tools ([9d73f7b](https://github.com/dackerman/demostore-node/commit/9d73f7b0673721c9d821d95ac25d759fe784ff0b))
+
+
+### Bug Fixes
+
+* **mcp:** fix cursor schema transformation issue with recursive references ([37b8966](https://github.com/dackerman/demostore-node/commit/37b89663fb3a0fd9aedb67408df47c5c8d9f158e))
+* **mcp:** include description in dynamic tool search ([1c5c48f](https://github.com/dackerman/demostore-node/commit/1c5c48f4decb7cb49c1953c5492d2bd36f3c6782))
+
+
+### Chores
+
+* **docs:** grammar improvements ([7442a23](https://github.com/dackerman/demostore-node/commit/7442a2385bcd4dad4446dd36f399596a24469fc3))
+* **docs:** use top-level-await in example snippets ([bbad55f](https://github.com/dackerman/demostore-node/commit/bbad55faf63c79576df98a02c13df7fca41f7ad5))
+* improve publish-npm script --latest tag logic ([d9fd0d6](https://github.com/dackerman/demostore-node/commit/d9fd0d6f6aac2b924d2c8e8de864c1166e57a056))
+* **mcp:** provides high-level initMcpServer function and exports known clients ([f13c1f0](https://github.com/dackerman/demostore-node/commit/f13c1f029f78bbcde0ba68e7864130e3699e3b5b))
+* **mcp:** remove duplicate assignment ([7bd6d74](https://github.com/dackerman/demostore-node/commit/7bd6d74a393a5d55d7ae02c14598ad968c5cd1a7))
+
 ## 0.8.0 (2025-05-12)
 
 Full Changelog: [v0.7.1...v0.8.0](https://github.com/dackerman/demostore-node/compare/v0.7.1...v0.8.0)

@@ -21,7 +21,7 @@ export class Products extends APIResource {
   variants: VariantsAPI.Variants = new VariantsAPI.Variants(this._client);
 
   /**
-   * Create Product
+   * Create Product!
    */
   create(params: ProductCreateParams, options?: Core.RequestOptions): Core.APIPromise<Product> {
     const { org_id = this._client.orgId, ...body } = params;
@@ -154,6 +154,9 @@ export interface ProductCreateParams {
 }
 
 export interface ProductRetrieveParams {
+  /**
+   * The ID of the organization
+   */
   org_id?: string;
 }
 
