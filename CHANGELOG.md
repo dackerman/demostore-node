@@ -1,5 +1,24 @@
 # Changelog
 
+## 0.10.0 (2025-06-14)
+
+Full Changelog: [v0.9.0...v0.10.0](https://github.com/dackerman/demostore-node/compare/v0.9.0...v0.10.0)
+
+### Features
+
+* **mcp:** set X-Stainless-MCP header ([5bdc48e](https://github.com/dackerman/demostore-node/commit/5bdc48e8e9b56137a45e91e098ead69f1253c403))
+
+
+### Bug Fixes
+
+* publish script — handle NPM errors correctly ([3589d97](https://github.com/dackerman/demostore-node/commit/3589d97a69a8ecb2d0d223116a4329a0b752ea75))
+
+
+### Chores
+
+* **internal:** codegen related update ([36ac07d](https://github.com/dackerman/demostore-node/commit/36ac07ddde5514479c97d3b93e8a0c7a348b90b3))
+* **internal:** make base APIResource abstract ([509b8d7](https://github.com/dackerman/demostore-node/commit/509b8d7dfbb1a4a8d378fe285f74027d3a3bf054))
+
 ## 0.9.0 (2025-06-10)
 
 Full Changelog: [v0.8.0...v0.9.0](https://github.com/dackerman/demostore-node/compare/v0.8.0...v0.9.0)
