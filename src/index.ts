@@ -136,6 +136,7 @@ export class StainlessStore extends Core.APIClient {
 
     super({
       baseURL: options.baseURL!,
+      baseURLOverridden: baseURL ? baseURL !== 'http://localhost:8000' : false,
       timeout: options.timeout ?? 60000 /* 1 minute */,
       httpAgent: options.httpAgent,
       maxRetries: options.maxRetries,
@@ -150,6 +151,13 @@ export class StainlessStore extends Core.APIClient {
 
   funtools: API.Funtools = new API.Funtools(this);
   products: API.Products = new API.Products(this);
+
+  /**
+   * Check whether the base URL is set to its default.
+   */
+  #baseURLOverridden(): boolean {
+    return this.baseURL !== 'http://localhost:8000';
+  }
 
   protected override defaultQuery(): Core.DefaultQuery | undefined {
     return this._options.defaultQuery;

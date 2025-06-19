@@ -214,6 +214,38 @@ describe('instantiate client', () => {
       });
       expect(client.baseURL).toEqual('http://localhost:8000');
     });
+
+    test('in request options', () => {
+      const client = new StainlessStore({
+        authToken: '123e4567-e89b-12d3-a456-426614174000',
+        orgId: 'my_org',
+      });
+      expect(client.buildURL('/foo', null, 'http://localhost:5000/option')).toEqual(
+        'http://localhost:5000/option/foo',
+      );
+    });
+
+    test('in request options overridden by client options', () => {
+      const client = new StainlessStore({
+        authToken: '123e4567-e89b-12d3-a456-426614174000',
+        orgId: 'my_org',
+        baseURL: 'http://localhost:5000/client',
+      });
+      expect(client.buildURL('/foo', null, 'http://localhost:5000/option')).toEqual(
+        'http://localhost:5000/client/foo',
+      );
+    });
+
+    test('in request options overridden by env variable', () => {
+      process.env['STAINLESS_STORE_BASE_URL'] = 'http://localhost:5000/env';
+      const client = new StainlessStore({
+        authToken: '123e4567-e89b-12d3-a456-426614174000',
+        orgId: 'my_org',
+      });
+      expect(client.buildURL('/foo', null, 'http://localhost:5000/option')).toEqual(
+        'http://localhost:5000/env/foo',
+      );
+    });
   });
 
   test('maxRetries option is correctly set', () => {
