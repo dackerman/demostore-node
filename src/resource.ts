@@ -2,7 +2,7 @@
 
 import type { StainlessStore } from './index';
 
-export class APIResource {
+export abstract class APIResource {
   protected _client: StainlessStore;
 
   constructor(client: StainlessStore) {

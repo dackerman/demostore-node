@@ -1,5 +1,32 @@
 # Changelog
 
+## 0.10.0 (2025-07-03)
+
+Full Changelog: [v0.9.0...v0.10.0](https://github.com/dackerman/demostore-node/compare/v0.9.0...v0.10.0)
+
+### Features
+
+* **client:** add support for endpoint-specific base URLs ([8a1e820](https://github.com/dackerman/demostore-node/commit/8a1e820da590d8b156a239e5b6d82b9c36e31acd))
+* **mcp:** set X-Stainless-MCP header ([5bdc48e](https://github.com/dackerman/demostore-node/commit/5bdc48e8e9b56137a45e91e098ead69f1253c403))
+
+
+### Bug Fixes
+
+* **ci:** release-doctor — report correct token name ([be1b358](https://github.com/dackerman/demostore-node/commit/be1b358fa0cb23c7b9e2842acb0522fd0bfed99b))
+* **client:** don't send `Content-Type` for bodyless methods ([c33f33e](https://github.com/dackerman/demostore-node/commit/c33f33e9f31accc599d64cadef5bbb90c8e94a8e))
+* **mcp:** define `.well-known/oauth-protected-resource` ([221cb37](https://github.com/dackerman/demostore-node/commit/221cb37c5eb237de7644892fb1a356fb850c1963))
+* **mcp:** use correct character set in cloudflare worker name ([1545055](https://github.com/dackerman/demostore-node/commit/1545055de61407245be8016ef0f4b57e9d0ce9c3))
+* publish script — handle NPM errors correctly ([3589d97](https://github.com/dackerman/demostore-node/commit/3589d97a69a8ecb2d0d223116a4329a0b752ea75))
+
+
+### Chores
+
+* **ci:** enable for pull requests ([724bdd9](https://github.com/dackerman/demostore-node/commit/724bdd95a47ce16a68daa7e1341228c3f048c9c4))
+* **ci:** only run for pushes and fork pull requests ([6a5e0d1](https://github.com/dackerman/demostore-node/commit/6a5e0d19b181448846a75dd8aba1c998e62b7097))
+* **internal:** codegen related update ([36ac07d](https://github.com/dackerman/demostore-node/commit/36ac07ddde5514479c97d3b93e8a0c7a348b90b3))
+* **internal:** make base APIResource abstract ([509b8d7](https://github.com/dackerman/demostore-node/commit/509b8d7dfbb1a4a8d378fe285f74027d3a3bf054))
+* mention unit type in timeout docs ([1b76c12](https://github.com/dackerman/demostore-node/commit/1b76c121e847f9582daa2913973983d2aa0059e7))
+
 ## 0.9.0 (2025-06-10)
 
 Full Changelog: [v0.8.0...v0.9.0](https://github.com/dackerman/demostore-node/compare/v0.8.0...v0.9.0)

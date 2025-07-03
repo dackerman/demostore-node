@@ -26,7 +26,7 @@ export { endpoints } from './tools';
 export const server = new McpServer(
   {
     name: 'dackerman_stainless_demostore_api',
-    version: '0.9.0',
+    version: '0.10.0',
   },
   {
     capabilities: {
@@ -65,7 +65,7 @@ export function init(params: {
 
   const endpointMap = Object.fromEntries(providedEndpoints.map((endpoint) => [endpoint.tool.name, endpoint]));
 
-  const client = params.client || new StainlessStore({});
+  const client = params.client || new StainlessStore({ defaultHeaders: { 'X-Stainless-MCP': 'true' } });
 
   server.setRequestHandler(ListToolsRequestSchema, async () => {
     return {
