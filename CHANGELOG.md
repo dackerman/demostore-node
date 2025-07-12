@@ -1,5 +1,28 @@
 # Changelog
 
+## 0.11.0 (2025-07-12)
+
+Full Changelog: [v0.10.0...v0.11.0](https://github.com/dackerman/demostore-node/compare/v0.10.0...v0.11.0)
+
+### Features
+
+* **mcp:** support filtering tool results by a jq expression ([ffc149f](https://github.com/dackerman/demostore-node/commit/ffc149f081d55136a3a67c36e4934234b1d6aeb8))
+
+
+### Bug Fixes
+
+* **mcp:** relax input type for asTextContextResult ([9909c50](https://github.com/dackerman/demostore-node/commit/9909c50c492ef6234d31286f5b0b5b99b8b0222d))
+
+
+### Chores
+
+* make some internal functions async ([8650c35](https://github.com/dackerman/demostore-node/commit/8650c357f63d99f4a52fd792d3c30d5a585b0409))
+
+
+### Documentation
+
+* **mcp:** correct instructions for adding to claude web ([59a70ef](https://github.com/dackerman/demostore-node/commit/59a70ef51bacce8ab686b96b47f641a1196ef645))
+
 ## 0.10.0 (2025-07-03)
 
 Full Changelog: [v0.9.0...v0.10.0](https://github.com/dackerman/demostore-node/compare/v0.9.0...v0.10.0)
