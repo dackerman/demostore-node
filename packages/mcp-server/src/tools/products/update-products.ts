@@ -1,10 +1,9 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 import { maybeFilter } from '@dackerman-stainless/demostore-mcp/filtering';
-import { asTextContentResult } from '@dackerman-stainless/demostore-mcp/tools/types';
+import { Metadata, asTextContentResult } from '@dackerman-stainless/demostore-mcp/tools/types';
 
 import { Tool } from '@modelcontextprotocol/sdk/types.js';
-import type { Metadata } from '../';
 import StainlessStore from '@dackerman-stainless/demostore';
 
 export const metadata: Metadata = {
