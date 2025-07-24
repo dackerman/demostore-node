@@ -35,6 +35,9 @@ export const tool: Tool = {
     },
     required: ['darkmode'],
   },
+  annotations: {
+    idempotentHint: true,
+  },
 };
 
 export const handler = async (client: StainlessStore, args: Record<string, unknown> | undefined) => {

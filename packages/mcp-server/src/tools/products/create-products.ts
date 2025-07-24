@@ -51,6 +51,7 @@ export const tool: Tool = {
     },
     required: ['org_id', 'description', 'image_url', 'name', 'price'],
   },
+  annotations: {},
 };
 
 export const handler = async (client: StainlessStore, args: Record<string, unknown> | undefined) => {

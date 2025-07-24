@@ -39,6 +39,9 @@ export const tool: Tool = {
     },
     required: ['org_id', 'product_id'],
   },
+  annotations: {
+    idempotentHint: true,
+  },
 };
 
 export const handler = async (client: StainlessStore, args: Record<string, unknown> | undefined) => {
