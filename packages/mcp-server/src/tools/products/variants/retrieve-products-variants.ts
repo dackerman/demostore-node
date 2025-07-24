@@ -43,6 +43,9 @@ export const tool: Tool = {
     },
     required: ['org_id', 'product_id', 'variant_id'],
   },
+  annotations: {
+    readOnlyHint: true,
+  },
 };
 
 export const handler = async (client: StainlessStore, args: Record<string, unknown> | undefined) => {
