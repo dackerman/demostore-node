@@ -55,9 +55,9 @@ export const tool: Tool = {
 };
 
 export const handler = async (client: StainlessStore, args: Record<string, unknown> | undefined) => {
-  const { product_id, ...body } = args as any;
+  const { product_id, jq_filter, ...body } = args as any;
   return asTextContentResult(
-    await maybeFilter(args, await client.products.variants.create(product_id, body)),
+    await maybeFilter(jq_filter, await client.products.variants.create(product_id, body)),
   );
 };
 

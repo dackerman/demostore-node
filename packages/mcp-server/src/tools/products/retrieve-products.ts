@@ -46,8 +46,8 @@ export const tool: Tool = {
 };
 
 export const handler = async (client: StainlessStore, args: Record<string, unknown> | undefined) => {
-  const { product_id, ...body } = args as any;
-  return asTextContentResult(await maybeFilter(args, await client.products.retrieve(product_id, body)));
+  const { product_id, jq_filter, ...body } = args as any;
+  return asTextContentResult(await maybeFilter(jq_filter, await client.products.retrieve(product_id, body)));
 };
 
 export default { metadata, tool, handler };
