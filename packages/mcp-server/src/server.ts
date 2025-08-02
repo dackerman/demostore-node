@@ -28,7 +28,7 @@ export const server = new McpServer(
     name: 'dackerman_stainless_demostore_api',
     version: '0.10.0',
   },
-  { capabilities: { tools: {} } },
+  { capabilities: { tools: {}, logging: {} } },
 );
 
 /**
