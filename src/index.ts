@@ -196,6 +196,7 @@ export class StainlessStore extends Core.APIClient {
 StainlessStore.Funtools = Funtools;
 StainlessStore.Products = Products;
 StainlessStore.ProductsOffsetPagination = ProductsOffsetPagination;
+
 export declare namespace StainlessStore {
   export type RequestOptions = Core.RequestOptions;
 
