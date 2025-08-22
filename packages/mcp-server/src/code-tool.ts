@@ -1,10 +1,8 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { type ClientOptions } from '@dackerman-stainless/demostore/index';
-
 import { dirname } from 'node:path';
 import { pathToFileURL } from 'node:url';
-import StainlessStore from '@dackerman-stainless/demostore';
+import StainlessStore, { ClientOptions } from '@dackerman-stainless/demostore';
 import { Endpoint, ContentBlock, Metadata } from './tools/types';
 
 import { Tool } from '@modelcontextprotocol/sdk/types.js';

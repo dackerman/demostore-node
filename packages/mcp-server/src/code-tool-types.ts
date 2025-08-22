@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { type ClientOptions } from '@dackerman-stainless/demostore/index';
+import { ClientOptions } from '@dackerman-stainless/demostore';
 
 export type WorkerInput = {
   opts: ClientOptions;
