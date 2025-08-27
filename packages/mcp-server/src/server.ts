@@ -32,7 +32,7 @@ export const newMcpServer = () =>
   new McpServer(
     {
       name: 'dackerman_stainless_demostore_api',
-      version: '0.10.0',
+      version: '0.11.0',
     },
     { capabilities: { tools: {}, logging: {} } },
   );
