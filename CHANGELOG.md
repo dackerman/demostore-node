@@ -1,5 +1,59 @@
 # Changelog
 
+## 0.11.0 (2025-08-27)
+
+Full Changelog: [v0.10.0...v0.11.0](https://github.com/dackerman/demostore-node/compare/v0.10.0...v0.11.0)
+
+### Features
+
+* **mcp:** add client infer to cloudflare oauth screen ([1e4dcb6](https://github.com/dackerman/demostore-node/commit/1e4dcb6216fe667d4b6ee335864144a8c1cb003c))
+* **mcp:** add code execution tool ([a88a0f0](https://github.com/dackerman/demostore-node/commit/a88a0f0a3af449a58ac5fafac8a510fae376c75c))
+* **mcp:** add logging when environment variable is set ([240bb7c](https://github.com/dackerman/demostore-node/commit/240bb7cac44d86c2685ccc3fca85f5ab758ec2a1))
+* **mcp:** add option to infer mcp client ([870d666](https://github.com/dackerman/demostore-node/commit/870d6665c41f0c88e372721936e5e4c169efb2eb))
+* **mcp:** add unix socket option for remote MCP ([362d22e](https://github.com/dackerman/demostore-node/commit/362d22e13a47601f22727477b67384d3101c101d))
+* **mcp:** parse query string as mcp client options in mcp server ([7ef5af6](https://github.com/dackerman/demostore-node/commit/7ef5af60a0bdaad4e49e5b45391dd37672bd072a))
+* **mcp:** remote server with passthru auth ([f7ff3e0](https://github.com/dackerman/demostore-node/commit/f7ff3e09ce047804d44b01193bbe855e81919961))
+* **mcp:** support filtering tool results by a jq expression ([ffc149f](https://github.com/dackerman/demostore-node/commit/ffc149f081d55136a3a67c36e4934234b1d6aeb8))
+
+
+### Bug Fixes
+
+* **mcp:** avoid sending `jq_filter` to base API ([16bfc34](https://github.com/dackerman/demostore-node/commit/16bfc345fbaf565064bbbe568146320875b86c32))
+* **mcp:** include required section for top-level properties and support naming transformations ([5fbb605](https://github.com/dackerman/demostore-node/commit/5fbb60506a8b53e8ee29bd471070dc773034c7da))
+* **mcp:** relax input type for asTextContextResult ([9909c50](https://github.com/dackerman/demostore-node/commit/9909c50c492ef6234d31286f5b0b5b99b8b0222d))
+* **mcp:** reverse validJson capability option and limit scope ([e75bd51](https://github.com/dackerman/demostore-node/commit/e75bd51add9daa3c8eda76a9bf4ecdbc2f775abd))
+* **mcp:** support jq filtering on cloudflare workers ([22e08b2](https://github.com/dackerman/demostore-node/commit/22e08b2fd2c4e9c4c6ded16cd68e150378456efb))
+
+
+### Chores
+
+* **deps:** update dependency node-fetch to v2.6.13 ([34a4bcc](https://github.com/dackerman/demostore-node/commit/34a4bcc10b4cdf7fd2400dfa95bdb8d337660376))
+* **internal:** codegen related update ([4e35968](https://github.com/dackerman/demostore-node/commit/4e35968c4145e3a4a00e0eb3f69ac85bdfc7c317))
+* **internal:** codegen related update ([31e800b](https://github.com/dackerman/demostore-node/commit/31e800ba547f8fd9a6e3c6f61953ede9147a219d))
+* **internal:** codegen related update ([20569ba](https://github.com/dackerman/demostore-node/commit/20569ba8b02fb03080766503578e456938b0951c))
+* **internal:** formatting change ([ac2f508](https://github.com/dackerman/demostore-node/commit/ac2f508dbbc8c464f59fc5e6eab9cd7434b89363))
+* **internal:** make mcp-server publishing public by defaut ([b8de62a](https://github.com/dackerman/demostore-node/commit/b8de62a7709697bb667046688522b1df31ddc2a6))
+* **internal:** move publish config ([a9ec814](https://github.com/dackerman/demostore-node/commit/a9ec81440896e0fd55ab4e7749ea99e275389e46))
+* **internal:** remove redundant imports config ([afd5651](https://github.com/dackerman/demostore-node/commit/afd56510513c8257ceaa40455f33ddbc0a2a9780))
+* **internal:** update comment in script ([2de61dc](https://github.com/dackerman/demostore-node/commit/2de61dcbe7f6d30eba8c5b23c7faaef730093246))
+* make some internal functions async ([8650c35](https://github.com/dackerman/demostore-node/commit/8650c357f63d99f4a52fd792d3c30d5a585b0409))
+* **mcp:** add cors to oauth metadata route ([7ad8953](https://github.com/dackerman/demostore-node/commit/7ad89535477674f8f56db5908ea626593a000417))
+* **mcp:** document remote server in README.md ([38e30e0](https://github.com/dackerman/demostore-node/commit/38e30e09433fec32fee86c6eb79168f29b16122f))
+* **mcp:** formatting ([c129db1](https://github.com/dackerman/demostore-node/commit/c129db1b60b2c53ded6f4641e921dfb1b24cc294))
+* **mcp:** minor cleanup of types and package.json ([f66fba2](https://github.com/dackerman/demostore-node/commit/f66fba241cb021a13a31a89797657dc7325072d4))
+* **mcp:** refactor streamable http transport ([5cc84b6](https://github.com/dackerman/demostore-node/commit/5cc84b6d6a55b69e3e91e51f45716d451c2653ea))
+* **mcp:** rework imports in tools ([9471ef4](https://github.com/dackerman/demostore-node/commit/9471ef41bef3f61d1b41744da5310571f9429f52))
+* **mcp:** update package.json ([12489b5](https://github.com/dackerman/demostore-node/commit/12489b5dcdd398186bcf74fbfcee94048de9a2bc))
+* **mcp:** update README ([debe916](https://github.com/dackerman/demostore-node/commit/debe9166dfd4b8ccd2d15ce33594d3a084048ea4))
+* **mcp:** update types ([734815f](https://github.com/dackerman/demostore-node/commit/734815f809264629834d15fe271b59f536f05bdd))
+* update @stainless-api/prism-cli to v5.15.0 ([570709b](https://github.com/dackerman/demostore-node/commit/570709bbad70d74c3232591f0c48b0c26ca1a81e))
+* update CI script ([f0eeaef](https://github.com/dackerman/demostore-node/commit/f0eeaef894b364bcb3e4c611a3ae8a69a81cd69c))
+
+
+### Documentation
+
+* **mcp:** correct instructions for adding to claude web ([59a70ef](https://github.com/dackerman/demostore-node/commit/59a70ef51bacce8ab686b96b47f641a1196ef645))
+
 ## 0.10.0 (2025-07-03)
 
 Full Changelog: [v0.9.0...v0.10.0](https://github.com/dackerman/demostore-node/compare/v0.9.0...v0.10.0)

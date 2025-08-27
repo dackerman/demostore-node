@@ -1,6 +1,6 @@
 {
   "name": "@dackerman-stainless/demostore",
-  "version": "0.10.0",
+  "version": "0.11.0",
   "description": "The official TypeScript library for the Stainless Store API",
   "author": "Stainless Store <dev-feedback@dackerman-store.com>",
   "types": "dist/index.d.ts",
@@ -13,6 +13,9 @@
     "**/*"
   ],
   "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "test": "./scripts/test",
     "build": "./scripts/build",
@@ -58,10 +61,6 @@
     "./shims/web.js",
     "./shims/web.mjs"
   ],
-  "imports": {
-    "@dackerman-stainless/demostore": ".",
-    "@dackerman-stainless/demostore/*": "./src/*"
-  },
   "exports": {
     "./_shims/auto/*": {
       "deno": {
